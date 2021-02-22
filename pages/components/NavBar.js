@@ -1,7 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Switch from 'react-switch'
+import { ThemeContext } from './context/ThemeContext';
 
 export default function NavBar() {
+
+  const { dark, setdark } = useContext(ThemeContext)
 
   useEffect(() => {
     var mobileMenuButton = document.getElementById("mobileMenuButton");
@@ -26,10 +29,10 @@ export default function NavBar() {
   
   
   }, [])
-  const [darkmode, setDarkmode] = useState(true)
+
   return (
 
-    <nav className="bg-white shadow-xl hover:shadow-2xl md:rounded-full rounded-xl transition-shadow fixed max-w-screen-lg z-10 mx-auto inset-x-0 top-0 flex justify-between items-center  md:mt-5 sm:p-2 ">
+    <nav className="bg-white dark:bg-gray-800 transition-all shadow-xl hover:shadow-2xl md:rounded-full rounded-xl  fixed max-w-screen-lg z-10 mx-auto inset-x-0 top-0 flex justify-between items-center  md:mt-5 sm:p-2 ">
 
       <Logo />
 
@@ -49,9 +52,9 @@ export default function NavBar() {
         <Switch
                 className="react-switch"
                 value={(value) => console.log(value)}
-                onChange={() => setDarkmode(!darkmode)}
-                checked={darkmode}
-                onColor="#000"
+                onChange={() => setdark(!dark)}
+                checked={dark}
+                onColor="#333"
                 onHandleColor="#2395f0"
                 height={24}
                 width={52}
@@ -65,9 +68,9 @@ export default function NavBar() {
         />
       </div>
 
-        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent md:hover:bg-gray-200 md:px-4 md:py-2 hover:text-gray-700 transition-all duration-500"><span>About</span></a>
-        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent md:hover:bg-gray-200 md:px-4 md:py-2 hover:text-gray-700 transition-all duration-500"><span>About</span></a>
-        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent md:hover:bg-gray-200 md:px-4 md:py-2 hover:text-gray-700 transition-all duration-500"><span>About</span></a>
+        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent dark:hover:bg-gray-700 md:hover:bg-gray-200 md:px-4 md:py-2 dark:text-gray-200 hover:text-gray-700 transition-all duration-500"><span>Conoceme</span></a>
+        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent dark:hover:bg-gray-700 md:hover:bg-gray-200 md:px-4 md:py-2 dark:text-gray-200 hover:text-gray-700 transition-all duration-500"><span>Proyectos</span></a>
+        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent dark:hover:bg-gray-700 md:hover:bg-gray-200 md:px-4 md:py-2 dark:text-gray-200 hover:text-gray-700 transition-all duration-500 animate-bounce"><span>Contactame</span></a>
 
       </div>
 
