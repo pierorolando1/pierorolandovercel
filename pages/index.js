@@ -6,7 +6,7 @@ import Switch from 'react-switch'
 import { useState } from 'react'
 
 export default function Home() {
-  const [state, setstate] = useState(false)
+
   return (
     
     <>
@@ -28,9 +28,7 @@ export default function Home() {
         <div className="  h-full w-full pt-24 flex justify-center items-center">
           <div className=" h-2/5 w-2/5 ">
             <h1 className=" text-gradient bg-gradient-to-r from-blue-800 to-blue-500 text-center  text-6xl arciform" style={{filter: 'drop-shadow(5px 3px 11px rgba(0,0,0, 0.27))'}}>Hola, Soy Piero Rolando y soy un desarrolador React</h1>
-            <Switch
-              className="react-switch"
-            />
+
           </div>
         </div>
 

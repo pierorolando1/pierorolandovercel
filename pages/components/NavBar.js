@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+import Switch from 'react-switch'
 
 export default function NavBar() {
 
@@ -25,7 +26,7 @@ export default function NavBar() {
   
   
   }, [])
-
+  const [darkmode, setDarkmode] = useState(true)
   return (
 
     <nav className="bg-white shadow-xl hover:shadow-2xl md:rounded-full rounded-xl transition-shadow fixed max-w-screen-lg z-10 mx-auto inset-x-0 top-0 flex justify-between items-center  md:mt-5 sm:p-2 ">
@@ -44,6 +45,26 @@ export default function NavBar() {
 
 
       <div id="sideMenuHideOnMobile" className=" md:bg-transparent bg-white z-10 rounded-bl-md flex absolute top-auto right-1 transition-all duration-500 transform translate-x-0 w-1/2 md:w-auto px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1 ">
+      <div style={{  filter: 'drop-shadow()' }}>
+        <Switch
+                className="react-switch"
+                value={(value) => console.log(value)}
+                onChange={() => setDarkmode(!darkmode)}
+                checked={darkmode}
+                onColor="#000"
+                onHandleColor="#2395f0"
+                height={24}
+                width={52}
+                
+                checkedIcon={
+                  <div className="flex items-center text-center justify-center">🌜</div>
+                }
+                uncheckedIcon={
+                  <div className="flex items-center text-center justify-center">🌞</div>
+                }
+        />
+      </div>
+
         <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent md:hover:bg-gray-200 md:px-4 md:py-2 hover:text-gray-700 transition-all duration-500"><span>About</span></a>
         <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent md:hover:bg-gray-200 md:px-4 md:py-2 hover:text-gray-700 transition-all duration-500"><span>About</span></a>
         <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent md:hover:bg-gray-200 md:px-4 md:py-2 hover:text-gray-700 transition-all duration-500"><span>About</span></a>
