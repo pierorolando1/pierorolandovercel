@@ -30,10 +30,25 @@ export const MainHome = () => {
             </div>
         </div>
 
-        <div className="h-3/5 w-full flex justify-center items-center">
+        <div className="h-2/5 w-full flex justify-center items-center">
 
-            <div className="bg-green-400 max-w-screen-lg w-3/4 h-4/5">
-
+            <div className="bg-green-400 max-w-screen-lg w-3/4 h-1/3 md:grid  grid grid-cols-4 gap-5">
+                <div class="col-end-5 my-2" style={{ gridColumn: 'span 1 / span 2' }}>
+                    <a href="#">
+                        <div
+                            class="h-full p-6 dark:bg-gray-800 bg-white hover:shadow-xl rounded border-b-4 border-red-500 shadow-md text-right">
+                            <h3 class="text-2xl mb-3 font-semibold inline-flex ">
+                                Next
+                                <svg class="ml-2" width="24" height="30" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+                                        fill="currentColor" /></svg>
+                            </h3>
+                            <p class="text-lg">Why do we use it?</p>
+                        </div>
+                    </a>
+                </div>
             </div>
 
         </div>
