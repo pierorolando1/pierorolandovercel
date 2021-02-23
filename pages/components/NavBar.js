@@ -69,7 +69,7 @@ export default function NavBar() {
 
         <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Conoceme</span></a>
         <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Proyectos</span></a>
-        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500 animate-bounce"><span>Contactame</span></a>
+        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Contactame</span></a>
 
       </div>
       

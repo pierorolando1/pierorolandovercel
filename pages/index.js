@@ -3,8 +3,7 @@ import { ThemeContext, ThemeProvider } from './components/context/ThemeContext'
 import styles from '../styles/Home.module.css'
 import 'tailwindcss/tailwind.css'
 import  NavBar  from './components/NavBar'
-import { useContext, useEffect } from 'react'
-import { ReactHome } from './components/ReactHome'
+import { MainHome } from './components/MainHome'
 
 export default function Home() {
 
@@ -19,7 +18,7 @@ export default function Home() {
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"></link>
 
-      <ReactHome />
+      <MainHome />
 
     </ThemeProvider>
   )
