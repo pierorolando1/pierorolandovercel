@@ -47,7 +47,7 @@ export default function NavBar() {
       </button>
 
 
-      <div id="sideMenuHideOnMobile" className=" md:bg-transparent bg-white z-10 rounded-bl-md flex absolute top-auto right-1 transition-all duration-500 transform translate-x-0 w-1/2 md:w-auto px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1 ">
+      <div id="sideMenuHideOnMobile" className="top-0 dark:bg-gray-800 md:dark:bg-transparent md:bg-transparent bg-white z-10 rounded-bl-md flex absolute md:top-auto right-1 transition-all duration-500 transform translate-x-0 w-1/2 md:w-auto px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1 md:p-4">
       <div style={{  filter: 'drop-shadow()' }}>
         <Switch
                 className="react-switch"
@@ -58,7 +58,6 @@ export default function NavBar() {
                 onHandleColor="#2395f0"
                 height={24}
                 width={52}
-                
                 checkedIcon={
                   <div className="flex items-center text-center justify-center">🌜</div>
                 }
@@ -68,14 +67,12 @@ export default function NavBar() {
         />
       </div>
 
-        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent dark:hover:bg-gray-700 md:hover:bg-gray-200 md:px-4 md:py-2 dark:text-gray-200 hover:text-gray-700 transition-all duration-500"><span>Conoceme</span></a>
-        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent dark:hover:bg-gray-700 md:hover:bg-gray-200 md:px-4 md:py-2 dark:text-gray-200 hover:text-gray-700 transition-all duration-500"><span>Proyectos</span></a>
-        <a href="#" className="mx-0 sm:mx-2 md:my-2 border-b-2 rounded-full font-sans border-transparent dark:hover:bg-gray-700 md:hover:bg-gray-200 md:px-4 md:py-2 dark:text-gray-200 hover:text-gray-700 transition-all duration-500 animate-bounce"><span>Contactame</span></a>
+        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Conoceme</span></a>
+        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Proyectos</span></a>
+        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500 animate-bounce"><span>Contactame</span></a>
 
       </div>
-
-
-
+      
     </nav>
 
   )
@@ -88,6 +85,3 @@ export const Logo = () => {
     </a>
   )
 }
-
-
-
