@@ -32,16 +32,16 @@ export default function NavBar() {
 
   return (
 
-    <nav className="bg-white dark:bg-gray-800 transition-all shadow-xl hover:shadow-2xl md:rounded-full rounded-xl  fixed max-w-screen-lg z-10 mx-auto inset-x-0 top-0 flex justify-between items-center  md:mt-5 sm:p-2 ">
+    <nav className={`transition-all shadow-xl hover:shadow-2xl md:rounded-full rounded-xl  fixed max-w-screen-lg z-10 mx-auto inset-x-0 top-0 flex justify-between items-center  md:mt-5 sm:p-2 ${ dark ? 'bg-gray-800 ': 'bg-white'}`}>
 
       <Logo />
 
       <button id="mobileMenuButton" className="p-3 focus:outline-none md:hidden" title="Open side menu">
 
-        <svg id="mobileMenuButtonClose" className="dark:text-white text-black w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="mobileMenuButtonClose" className={`${ dark ? 'text-white' : 'text-black'} w-6 h-6 hidden`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
 
-        <svg id="mobileMenuButtonOpen" className="dark:text-white text-black w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="mobileMenuButtonOpen" className={`${ dark ? 'text-white' : 'text-black'} w-6 h-6 hidden`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
@@ -67,9 +67,9 @@ export default function NavBar() {
         />
       </div>
 
-        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Conoceme</span></a>
-        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Proyectos</span></a>
-        <a href="#" className="my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300 dark:text-gray-100 hover:text-gray-700 transition-all duration-500"><span>Contactame</span></a>
+        <a href="#" className={`my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300  hover:text-gray-700 transition-all duration-500 ${ dark ? 'text-white' : 'text-black'}` } ><span>Conoceme</span></a>
+        <a href="#" className={`my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300  hover:text-gray-700 transition-all duration-500 ${ dark ? 'text-white' : 'text-black'}` } ><span>Proyectos</span></a>
+        <a href="#" className={`my-1 mx-0 sm:mx-2 border-b-2 rounded-full arciform border-transparent md:px-4 md:py-2 dark:hover:text-gray-300  hover:text-gray-700 transition-all duration-500 ${ dark ? 'text-white' : 'text-black'}` } ><span>Contactame</span></a>
 
       </div>
       
@@ -79,9 +79,12 @@ export default function NavBar() {
 }
 
 export const Logo = () => {
+
+  const { dark, setdark } = useContext(ThemeContext)
+
   return (
     <a href="#" className="ml-3 inline-flex transition-all duration-500">
-      <span className=" text-black dark:text-white  tracking-wide arciform pb-1 text-lg">pr</span>
+      <span className={`${ dark ? 'text-white' : 'text-black'}  tracking-wide arciform pb-1 text-lg`}>pr</span>
     </a>
   )
 }
