@@ -47,7 +47,7 @@ export default function NavBar() {
       </button>
 
 
-      <div id="sideMenuHideOnMobile" className="top-0 dark:bg-gray-800 md:dark:bg-transparent md:bg-transparent bg-white z-10 rounded-bl-md flex absolute md:top-auto right-1 transition-all duration-500 transform translate-x-0 w-1/2 md:w-auto px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1 md:p-4">
+      <div id="sideMenuHideOnMobile" className={ `top-0 ${ dark ? 'md:bg-transparent bg-gray-800' : 'bg-white'} md:dark:bg-transparent md:bg-transparent z-10 rounded-bl-md flex absolute md:top-auto right-1 transition-all duration-500 transform translate-x-0 w-1/2 md:w-auto px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1 md:p-4`}>
       <div style={{  filter: 'drop-shadow()' }}>
         <Switch
                 className="react-switch"

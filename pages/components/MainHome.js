@@ -18,7 +18,7 @@ export const MainHome = () => {
     }}>
         <div className="pt-10 w-screen h-1/2 flex justify-center items-center overflow-x-hidden" style={{ 
 
-        backgroundImage: `url(${ dark ? 'https://wallpaperaccess.com/full/3949076.jpg' : "https://midu.dev/images/wallpapers/fondo-react-horizontal-random-4k.png" })`, 
+        backgroundImage: `url(${ '/ola.png'  })`, 
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
