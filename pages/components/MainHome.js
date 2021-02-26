@@ -26,7 +26,7 @@ export const MainHome = () => {
         marginTop: '5.5rem',
     }}>
             <div className=" h-3/5 w-3/4 max-w-screen-lg pt-4  flex justify-center">
-                <h1 className="font-sans arciform pb-1 text-gradient bg-gradient-to-r dark:text-white dark:from-gray-100 dark:to-white from-blue-800 to-blue-500 text-left text-2xl md:text-4xl" style={{filter: 'drop-shadow(5px 3px 9px rgba(0,0,0, 0.9))'}}>Hola, <br/> <span className="font-bold text-3xl md:text-6xl">Soy Piero Rolando </span><br/><span className="md:text-4xl text-2xl font-normal">y soy un desarrolador React</span></h1>
+                <h1 className="font-sans arciform pb-1 text-gradient bg-gradient-to-r dark:text-white dark:from-gray-100 dark:to-white from-blue-800 to-blue-500 text-left text-2xl md:text-4xl" style={{filter: 'drop-shadow(5px 3px 9px rgba(0,0,0, 0.9))'}}>Hola, <br/> <span className="font-bold text-3xl md:text-6xl">Soy Piero Rolando </span><br/><span className="md:text-4xl text-2xl font-normal animate__backInDown">y soy un desarrolador React</span></h1>
             </div>
         </div>
 
