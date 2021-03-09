@@ -2,7 +2,8 @@ import React, { useState} from 'react'
 
 export default function Navbar() {
   
-  const [proyectsnav, setProyectsnav] = useState(false)
+  const [proyectsnav, setProyectsnav] = useState(true)
+  const [mobileNav, setMobileNav] = useState(false)
 
   return (
     <div className="fixed w-full bg-gray-800">
@@ -15,19 +16,19 @@ export default function Navbar() {
         </a>
       </div>
       <div className="-mr-2 -my-2 md:hidden">
-        <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-expanded="false">
+        <a  className="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
           <span className="sr-only">Open menu</span>
           <svg className="h-6 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-        </button>
+        </a>
       </div>
       <nav className="hidden md:flex space-x-10">
         <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-400">Inicio</a>
         <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-400">¿Quien soy?</a>
         <div className="relative">
           {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-          <button onClick={ () => {setProyectsnav(!proyectsnav), console.log(proyectsnav)} } type="button" className="text-gray-500 group rounded-md inline-flex items-center text-base font-medium hover:text-gray-400" aria-expanded="false">
+          <button onClick={ () => { setProyectsnav(!proyectsnav) } } /*onClick={ () => { setProyectsnav(!proyectsnav) } }*/ type="button" className={`${ proyectsnav ?'text-gray-500' :'text-gray-300' }  rounded-md inline-flex items-center text-base font-medium hover:text-gray-400" aria-expanded="false`} >
             <span>Proyectos</span>
             {/* <!--
               Heroicon name: solid/chevron-down
@@ -35,7 +36,7 @@ export default function Navbar() {
               Item active: "text-gray-600", Item inactive: "text-gray-400"
             --> */}
             <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </button>
 
@@ -49,7 +50,7 @@ export default function Navbar() {
               From: "opacity-100 translate-y-0"
               To: "opacity-0 translate-y-1" 
           --> */}
-          <SubMenu active={ proyectsnav } />
+          <SubMenu active={ proyectsnav }  />
         </div>
 
         <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a>
@@ -82,7 +83,7 @@ export default function Navbar() {
               <span className="sr-only">Close menu</span>
    
               <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path stroke-linecap="round" strokeLinecap="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
@@ -113,7 +114,7 @@ export default function Navbar() {
 
             <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
               <svg className="flex-shrink-0 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                <path stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
               <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> FullStack </span>
             </a>
@@ -136,6 +137,18 @@ export default function Navbar() {
 </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export const SubMenu = ({ active }) => {
@@ -177,7 +190,7 @@ export const SubMenu = ({ active }) => {
 
         <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
           <svg className="flex-shrink-0 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
           <div className="ml-4">
             <p className="text-base font-medium text-gray-300">Full Stack</p>
