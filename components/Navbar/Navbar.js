@@ -150,7 +150,7 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
             <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Inicio</a></Link>
             <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">¿Quien soy?</a></Link>
             <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Proyectos</a></Link>
-            <Link href="/blog"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200"> Blog </a></Link>
+            <Link href="/blog"><a href="/blog" className="text-base font-medium text-gray-400 hover:text-gray-200"> Blog </a></Link>
           </div>
           <div>
             <a href="#" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contactame</a>
