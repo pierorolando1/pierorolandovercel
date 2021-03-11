@@ -100,7 +100,7 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
         <div className="pt-5 pb-6 px-5">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="arciform text-gray-100">pr</h1>
+              <Link href="/"><h1 className="arciform text-gray-100">pr</h1></Link>
             </div>
             <div className="-mr-2">
               <button onClick={() => { setMobileNav(!active) }} type="button" className="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
@@ -147,10 +147,10 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
         </div>
         <div className="py-6 px-5 space-y-6">
           <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Inicio</a>
-            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">¿Quien soy?</a>
-            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Proyectos</a>
-            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200"> Blog </a>
+            <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Inicio</a></Link>
+            <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">¿Quien soy?</a></Link>
+            <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Proyectos</a></Link>
+            <Link href="/blog"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200"> Blog </a></Link>
           </div>
           <div>
             <a href="#" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contactame</a>
