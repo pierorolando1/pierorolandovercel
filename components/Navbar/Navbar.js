@@ -66,7 +66,7 @@ export default function Navbar() {
               <SubMenu active={proyectsnav} setProyectsnav={setProyectsnav} />
             </div>
 
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a>
+            <Link href="/blog"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a></Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <Link href="/contact"><a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 opacity-75 hover:opacity-95">Contactame</a></Link> 
