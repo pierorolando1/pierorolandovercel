@@ -2,7 +2,7 @@ import Head from 'next/head'
 //import '../styles/Home.module.css'
 import 'tailwindcss/tailwind.css'
 import { WelcomePage } from '../components/WelcomePage'
-import Navbar from '../components/Navbar/navbar'
+import Navbar from '../components/Navbar/Navbar'
 import React, { useEffect } from 'react'
 import { useRouter } from "next/router";
 import NProgress from "nprogress";

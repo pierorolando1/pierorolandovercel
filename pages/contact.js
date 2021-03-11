@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import nProgress from "nprogress";
 import Head from 'next/head'
-import Navbar from '../components/Navbar/navbar';
+import Navbar from '../components/Navbar/Navbar';
 
 const Contact = () => {
     const router = useRouter();
