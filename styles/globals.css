@@ -11,8 +11,9 @@ body {
   scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar{
+#__next::-webkit-scrollbar{
   display: none;
+  background-color: red;
 }
 
 a {
