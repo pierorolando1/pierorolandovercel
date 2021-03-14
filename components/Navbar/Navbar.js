@@ -7,11 +7,11 @@ export default function Navbar() {
   const [mobileNav, setMobileNav] = useState(false)
 
   useEffect(() => {
-    
-    window.addEventListener('scroll', function(){
+
+    window.addEventListener('scroll', function () {
       var navbarcoloractive = document.getElementById('navbarcoloractive')
       var navbarpaddingactive = document.getElementById('navbarpaddingactive')
-      
+
       navbarcoloractive.classList.toggle('navbarcoloractive', window.scrollY > 0);
       navbarpaddingactive.classList.toggle('navbarpaddingactive', window.scrollY > 0);
 
@@ -25,7 +25,7 @@ export default function Navbar() {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Workflow</span>
-              <img src="/favicon.png" className="w-6"/>
+              <img src="/favicon.png" className="w-6" />
 
             </a>
           </div>
@@ -38,7 +38,7 @@ export default function Navbar() {
             </a>
           </div>
           <nav className="hidden md:flex space-x-10">
-            <Link  href="/"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Inicio</a></Link>
+            <Link href="/"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Inicio</a></Link>
             <Link href="/#main"><a className="text-base font-medium text-gray-500 hover:text-gray-400">¿Quien soy?</a></Link>
             <div className="relative">
               {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
@@ -70,7 +70,7 @@ export default function Navbar() {
             <Link href="/blog"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a></Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Link href="/contact"><a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 opacity-75 hover:opacity-95">Contactame</a></Link> 
+            <Link href="/contact"><a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 opacity-75 hover:opacity-95">Contactame</a></Link>
           </div>
         </div>
       </div>
@@ -115,34 +115,34 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
           </div>
           <div className="mt-6">
             <nav className="grid gap-y-8">
-              <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/proyects/react"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
 
                 <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
                 <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> React </span>
-              </a>
+              </a></Link>
 
-              <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/proyects/flutter"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
 
                 <img src="https://miro.medium.com/max/1000/1*ilC2Aqp5sZd1wi0CopD1Hw.png" className="w-6" />
                 <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> Flutter </span>
-              </a>
+              </a></Link>
 
-              <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/proyects/reactnative"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
                 <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
                 <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> React Native </span>
-              </a>
+              </a></Link>
 
-              <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/proyects/express"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
                 <img src="https://www.mattepuffo.com/IMMAGINI_ARTICOLI/nodejs.jpeg" className="w-6" />
                 <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> Node/express </span>
-              </a>
+              </a></Link>
 
-              <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/fullstack"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
                 <svg className="flex-shrink-0 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
                 <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> FullStack </span>
-              </a>
+              </a></Link>
             </nav>
           </div>
         </div>
