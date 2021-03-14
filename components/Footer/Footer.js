@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -126,7 +127,7 @@ const Footer = () => {
             border-t border-gray-500 text-gray-400 text-sm 
             flex-col md:flex-row max-w-6xl">
             <div className="mt-2">
-                © Copyright Piero Rolando 2021. Made with Love, ReactJS and Tailwind  
+                © Copyright Piero Rolando 2021. Made with Love, <a href="https://reactjs.org/" target="_blank" className="text-gray-300 hover:underline">React</a>, <a href="https://tailwindcss.com/" target="_blank" className="text-gray-300 hover:underline">Tailwind</a> and powered by <a href="https://vercel.com" target="_blank" className="text-gray-300 hover:underline">Vercel</a> 
             </div>
 
             {/* <!-- Required Unicons (if you want) --> */}
