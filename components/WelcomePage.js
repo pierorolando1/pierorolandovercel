@@ -16,7 +16,7 @@ export const Header = () => {
 
             <div className="flex flex-col w-full h-full">
                 <div className="flex items-center justify-center" style={{ flex: 2 }}>
-                    <h1 className="z-30 text-white text-5xl font-normal mt-40 w-3/5"><span className="font-semibold">Hola mundo, soy<br /> <span className="text-7xl font-bold">Piero Rolando,</span> </span><br /> <span className="text-6xl font-medium">FullStack developer</span> </h1>
+                    <h1 className="z-30 text-white  md:text-5xl sm:text-3xl text-2xl font-normal mt-40 w-3/5"><span className="font-semibold">Hola mundo, soy<br /> <span className="md:text-7xl sm:text-5xl text-4xl font-bold">Piero Rolando,</span> </span><br /> <span className="md:text-6xl sm:text-4xl text-2xl font-medium">FullStack developer</span> </h1>
                 </div>
                 <div className="flex items-center justify-center z-10" style={{ flex: 1 }}>
                     <a href="#main" className="w-14 h-14 bg-blue-900 hover:bg-blue-700 transition-all hover:shadow-2xl shadow-xl flex justify-center items-center cursor-pointer animate-bounce">

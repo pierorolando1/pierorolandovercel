@@ -1,10 +1,13 @@
 import React from 'react'
+import { NormalPage } from '../components/NormalPage'
 
 const Blog = () => {
     return (
-        <div className="m-auto">
-            blog
-        </div>
+        <NormalPage>
+            <div className="m-auto">
+                blog
+            </div>
+        </NormalPage>
     )
 }
 
