@@ -25,7 +25,8 @@ export default function Navbar() {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Workflow</span>
-              <h1 className="arciform text-gray-100 text-xl">pr</h1>
+              <img src="/favicon.png" className="w-6"/>
+
             </a>
           </div>
           <div className="cursor-pointer -mr-2 -my-2 md:hidden" onClick={() => { setMobileNav(!mobileNav) }} >
@@ -38,7 +39,7 @@ export default function Navbar() {
           </div>
           <nav className="hidden md:flex space-x-10">
             <Link  href="/"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Inicio</a></Link>
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-400">¿Quien soy?</a>
+            <Link href="/#main"><a className="text-base font-medium text-gray-500 hover:text-gray-400">¿Quien soy?</a></Link>
             <div className="relative">
               {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
               <a onClick={() => { setProyectsnav(!proyectsnav) }} /*onClick={ () => { setProyectsnav(!proyectsnav) } }*/ className={`${proyectsnav ? 'text-gray-500' : 'text-gray-300'} cursor-pointer rounded-md inline-flex items-center text-base font-medium hover:text-gray-400" aria-expanded="false`} >
@@ -148,7 +149,7 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
         <div className="py-6 px-5 space-y-6">
           <div className="grid grid-cols-2 gap-y-4 gap-x-8">
             <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Inicio</a></Link>
-            <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">¿Quien soy?</a></Link>
+            <Link href="/#main"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">¿Quien soy?</a></Link>
             <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Proyectos</a></Link>
             <Link href="/blog"><a href="/blog" className="text-base font-medium text-gray-400 hover:text-gray-200"> Blog </a></Link>
           </div>

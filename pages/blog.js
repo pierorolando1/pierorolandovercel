@@ -3,9 +3,9 @@ import { NormalPage } from '../components/NormalPage'
 
 const Blog = () => {
     return (
-        <NormalPage>
-            <div className="m-auto">
-                blog
+        <NormalPage title="Blog">
+            <div className="w-full h-screen flex">
+                <span className="m-auto">blog</span>
             </div>
         </NormalPage>
     )
