@@ -168,39 +168,39 @@ export const SubMenu = ({ active, setProyectsnav }) => {
     <div onMouseLeave={() => { setProyectsnav(true) }} className={`${active ? 'hidden' : ''} absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}>
       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
         <div className="relative grid gap-6 bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
-          <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
+        <Link href="/proyects/react"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
             <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
             <div className="ml-4">
               <p className="text-base font-medium text-gray-300">React</p>
               <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Mira algunos proyectos que realize con la libreria de Facebook</p>
             </div>
-          </a>
+          </a></Link>
 
-          <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
+          <Link href="/proyects/flutter"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
             <img src="https://miro.medium.com/max/1000/1*ilC2Aqp5sZd1wi0CopD1Hw.png" className="w-6" />
             <div className="ml-4">
               <p className="text-base font-medium text-gray-300">Flutter</p>
               <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Clickeame para ver algunos proyectos que he realizado con el SDK de Google</p>
             </div>
-          </a>
+          </a></Link>
 
-          <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
+          <Link href="/proyects/reactnative"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
             <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
             <div className="ml-4">
               <p className="text-base font-medium text-gray-300">React Native</p>
               <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Your customers&#039; data will be safe and secure.</p>
             </div>
-          </a>
+          </a></Link>
 
-          <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
+          <Link href="/proyects/express"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
             <img src="https://www.mattepuffo.com/IMMAGINI_ARTICOLI/nodejs.jpeg" className="w-6" />
             <div className="ml-4">
               <p className="text-base font-medium text-gray-300">Node/express</p>
               <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Connect with third-party tools that you&#039;re already using.</p>
             </div>
-          </a>
+          </a></Link>
 
-          <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
+          <Link href="/proyects/"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
             <svg className="flex-shrink-0 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
@@ -208,7 +208,7 @@ export const SubMenu = ({ active, setProyectsnav }) => {
               <p className="text-base font-medium text-gray-300">Full Stack</p>
               <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Es casi imposible hacer un proyecto con una sola tecnologia, aqui estan algunos proyectos donde combino varias tecnologias</p>
             </div>
-          </a>
+          </a></Link>
         </div>
       </div>
     </div>

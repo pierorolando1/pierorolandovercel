@@ -1,7 +1,7 @@
 import React from 'react'
 import { NormalPage } from '../../components/NormalPage'
 
-const React = () => {
+const ReactJS = () => {
     return (
         <NormalPage title="React">
             <div>
@@ -11,4 +11,4 @@ const React = () => {
     )
 }
 
-export default React
+export default ReactJS
