@@ -20,8 +20,8 @@ export const ContactForm = () => {
     const [mensaje, setMensaje] = useState('')
 
     return (
-        <section id="contact" className="relative w-full min-h-screen bg-black text-gray-500 flex md:pt-0 pt-40" >
-            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 h-32 w-full"></div>
+        <section id="contact" className="relative w-full min-h-screen bg-blue-900 text-gray-500 flex md:pt-0 pt-40" >
+            <div className="fixed top-1/2 left-1/2 shadow-2xl transform -translate-x-1/2 -translate-y-1/2 bg-blue-800 h-32 w-full"></div>
 
             {/* <!-- wrapper --> */}
             <div className="relative p-5 lg:px-20 flex flex-col md:flex-row items-center justify-center flex-1">
@@ -60,7 +60,7 @@ export const ContactForm = () => {
                 </div>
 
                 {/* <!-- Contact Me --> */}
-                <form action="#" className="w-full md:w-1/2 p-7 pt-9 rounded-3xl shadow-2xl bg-gray-800">
+                <form action="#" className="w-full md:w-1/2 p-7 pt-9 rounded-lg shadow-2xl bg-gray-800">
                     <h2 className="text-2xl pb-3 font-semibold">Send Message</h2>
                     <div>
                         <div className="flex flex-col mb-3">
@@ -81,7 +81,7 @@ export const ContactForm = () => {
                         </div>
                     </div>
                     <div className="w-full pt-3">
-                        <button type="submit" className="rounded-3xl shadow-2xl w-full bg-gray-900 px-4 py-2 transition duration-50 focus:outline-none font-semibold hover:bg-blue-700 hover:text-white text-xl cursor-pointer">Send</button>
+                        <button type="submit" className="rounded-3xl shadow-2xl w-full bg-blue-900 px-4 py-2 transition duration-50 focus:outline-none font-semibold hover:bg-blue-700 hover:text-white text-xl cursor-pointer">Send</button>
                     </div>
                 </form>
             </div>

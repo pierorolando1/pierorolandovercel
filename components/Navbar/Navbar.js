@@ -97,7 +97,7 @@ export default function Navbar() {
 export const SubMenuMobile = ({ active, setMobileNav }) => {
   return (
     <div className={`${active ? '' : 'hidden'} absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`} >
-      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-gray-800 divide-y-2 divide-gray-700">
+      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-700" style={{ backgroundColor:  'rgba(31, 41, 55, 0.9)' }}>
         <div className="pt-5 pb-6 px-5">
           <div className="flex items-center justify-between">
             <div>
@@ -167,7 +167,7 @@ export const SubMenu = ({ active, setProyectsnav }) => {
   return (
     <div onMouseLeave={() => { setProyectsnav(true) }} className={`${active ? 'hidden' : ''} absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}>
       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-        <div className="relative grid gap-6 bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
+        <div className="relative grid gap-6 px-5 py-6 sm:gap-8 sm:p-8" style={{ backgroundColor:  'rgba(31, 41, 55, 0.9)',  backdropFilter: 'blur(100px)' }}>
         <Link href="/proyects/react"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
             <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
             <div className="ml-4">
