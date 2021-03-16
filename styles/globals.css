@@ -50,7 +50,6 @@ a {
   --tw-bg-opacity: 0.92;
   background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
   transition: all;
-  backdrop-filter: blur(10px);
 }
 
 .navbarpaddingactive{
@@ -59,3 +58,20 @@ a {
     transition: all;
 }
 
+#contact{
+  background: linear-gradient(-45deg, #1e3a8a,#111827);
+  background-size: 400% 400%;
+  animation: change 5s ease-in-out infinite;
+}
+
+@keyframes change {
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
