@@ -27,7 +27,7 @@ export const ContactForm = () => {
             <div className="relative p-5 lg:px-20 flex flex-col md:flex-row items-center justify-center flex-1">
                 {/* <!-- Social Media --> */}
                 <div className="w-full md:w-1/2 p-5 md:px-0 mx-5">
-                    <div className="shadow-2xl w-full lg:w-3/4 h-full p-5 pt-8 rounded-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.3)'}} >
+                    <div className="shadow-2xl w-full lg:w-3/4 h-full p-5 pt-8 rounded-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}} >
                         <h3 className="text-2xl font-semibold mb-5 hover:text-blue-500">My Social Media</h3>
                         {/* <!-- list --> */}
                         <div className="flex flex-col gap-3">
@@ -60,7 +60,7 @@ export const ContactForm = () => {
                 </div>
 
                 {/* <!-- Contact Me --> */}
-                <form action="#" className="w-full md:w-1/2 p-7 pt-9 rounded-lg shadow-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.3)'}}>
+                <form action="#" className="w-full md:w-1/2 p-7 pt-9 rounded-lg shadow-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}}>
                     <h2 className="text-2xl pb-3 font-semibold">Send Message</h2>
                     <div>
                         <div className="flex flex-col mb-3">
