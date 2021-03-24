@@ -19,6 +19,10 @@ export const ContactForm = () => {
     const [asunto, setAsunto] = useState('')
     const [mensaje, setMensaje] = useState('')
 
+    useEffect(() => {
+        fetch('https://')
+    }, [])
+
     return (
         <section id="contact" className="relative w-full min-h-screen bg-black text-gray-500 flex md:pt-0 pt-40" >
             {/*<div className="fixed top-1/2 left-1/2 shadow-2xl transform -translate-x-1/2 -translate-y-1/2 bg-blue-800 h-80 w-full z-0" style={{ background: "url('https://cdn.tz.nl/wp-content/uploads/2018/09/shutterstock_680075008.jpg')", backgroundRepeat: 'no-repeat', background  }}></div>*/}
