@@ -19,10 +19,6 @@ export const ContactForm = () => {
     const [asunto, setAsunto] = useState('')
     const [mensaje, setMensaje] = useState('')
 
-    useEffect(() => {
-        fetch('https://')
-    }, [])
-
     return (
         <section id="contact" className="relative w-full min-h-screen bg-black text-gray-500 flex md:pt-0 pt-40" >
             {/*<div className="fixed top-1/2 left-1/2 shadow-2xl transform -translate-x-1/2 -translate-y-1/2 bg-blue-800 h-80 w-full z-0" style={{ background: "url('https://cdn.tz.nl/wp-content/uploads/2018/09/shutterstock_680075008.jpg')", backgroundRepeat: 'no-repeat', background  }}></div>*/}
@@ -69,19 +65,19 @@ export const ContactForm = () => {
                     <div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="name">Nombre</label>
-                            <input required onChange={ (palabra) => { console.log(palabra.target.value) } } placeholder="Name" type="text" id="name" className="placeholder-gray-600 px-3 py-2 bg-gray-700 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
+                            <input required onChange={ (palabra) => { setName(palabra.target.value) } } value={ name } placeholder="Name" type="text" id="name" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
                         </div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="email">Email</label>
-                            <input required placeholder="Email" type="email" id="email" className="placeholder-gray-600 px-3 py-2 bg-gray-700 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
+                            <input required onChange={ (palabra) => { setEmail(palabra.target.value) } } value={ email } placeholder="Email" type="email" id="email" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
                         </div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="asunto">Asunto</label>
-                            <input required placeholder="Asunto" type="text" id="asunto" className="placeholder-gray-600 px-3 py-2 bg-gray-700 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
+                            <input required onChange={ (palabra) => { setAsunto(palabra.target.value) } } value={ asunto } placeholder="Asunto" type="text" id="asunto" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
                         </div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="message">Mensaje</label>
-                            <textarea required placeholder="Mensaje" rows="4" id="message" className="placeholder-gray-600 px-3 py-2 bg-gray-700 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500"></textarea>
+                            <textarea required onChange={ (palabra) => { setMensaje(palabra.target.value) } } value={ mensaje } placeholder="Mensaje" rows="4" id="message" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500"></textarea>
                         </div>
                     </div>
                     <div className="w-full pt-3">

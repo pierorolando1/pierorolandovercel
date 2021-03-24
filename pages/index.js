@@ -10,7 +10,7 @@ export default function Home() {
   return (
     
     <>
-        <NextSeo
+    <NextSeo
       title="Inicio | Piero Rolando"
       description="Portafolio and personal blog of Piero Rolando"
     />
