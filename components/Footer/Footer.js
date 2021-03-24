@@ -15,25 +15,32 @@ const Footer = () => {
                     {/* <!-- Links --> */}
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Installation
-            </a>
+                    </a>
+
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Release Notes
-            </a>
+                    </a>
+
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Upgrade Guide
-            </a>
+                    </a>
+
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Using with Preprocessors
-            </a>
+                    </a>
+
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Optimizing for Production
-            </a>
+                    </a>
+
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Browser Support
-            </a>
+                    </a>
+
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         IntelliSense
-            </a>
+                    </a>
+
                 </div>
 
                 {/* <!-- Col-2 --> */}
@@ -108,16 +115,16 @@ const Footer = () => {
                     {/* <!-- Links --> */}
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         GitHub
-            </a>
-                    <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                    </a>
+                    <a href="https://discord.gg/Fex3JFp" target="_blank" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Discord
-            </a>
+                    </a>
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Twitter
-            </a>
+                    </a>
                     <a href="#" className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         YouTube
-            </a>
+                    </a>
                 </div>
             </div>
 
