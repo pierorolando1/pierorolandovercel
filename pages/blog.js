@@ -6,7 +6,7 @@ const Blog = () => {
         <NormalPage title="Blog" footer={ false }>
             <div className="w-full h-screen">
                 <div class="bg-gray-900 overflow-x-hidden">
-                    <div class="px-6 py-8">
+                    <div class="px-6 py-40">
                         <div class="flex justify-between container mx-auto">
                             <div class="w-full lg:w-8/12">
                                 <div class="flex items-center justify-between">
