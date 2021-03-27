@@ -7,7 +7,7 @@ import NProgress from "nprogress";
 import nProgress from "nprogress";
 import Footer from './Footer/Footer';
 
-export const NormalPage = ({ children, title }) => {
+export const NormalPage = ({ children, title, footer = true }) => {
 
   const router = useRouter();
 
@@ -50,7 +50,10 @@ export const NormalPage = ({ children, title }) => {
       { 
         children
       }
-      <Footer />
+      {
+        footer ? <Footer /> : <></>
+      }
+      
     </>
   )
 }

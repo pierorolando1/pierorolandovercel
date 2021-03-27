@@ -10,5 +10,7 @@ module.exports = {
       textOpacity: ['dark']
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ]
 }
