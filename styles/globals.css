@@ -58,7 +58,7 @@ a {
     transition: all;
 }
 
-#contact{
+#contact, .bggradient {
   background: linear-gradient(-45deg, #1e3a8a,#111827);
   background-size: 400% 400%;
   animation: change 5s ease-in-out infinite;

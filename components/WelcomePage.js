@@ -33,7 +33,7 @@ export const Header = () => {
 
 export const Main = () => {
     return (
-        <main className="w-full flex items-center justify-center" id="main" style={{ height: '70vh', background: '#0d1117' }}>
+        <main className="w-full flex items-center justify-center bggradient" id="main" style={{ height: '70vh', }}>
             <div className="max-w-7xl h-full text-gray-400" style={{ flex: 1 }} >
                 <h1 className=" mt-32 uppercase font-normal text-center">Desarrollo mobil y web</h1>
                 <h1 className="text-3xl text-center text-gray-300">SOY PIERO ROLANDO,<br />DESARROLLADOR FULL STACK</h1>
