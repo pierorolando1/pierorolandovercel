@@ -14,6 +14,10 @@ class MyDocument extends Document {
           <link 
             href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" 
             rel="stylesheet" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+          />
         </Head>
         <body>
           <Main />
