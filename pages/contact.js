@@ -65,19 +65,19 @@ export const ContactForm = () => {
                     <div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="name">Nombre</label>
-                            <input required onChange={ (palabra) => { setName(palabra.target.value) } } value={ name } placeholder="Name" type="text" id="name" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
+                            <input required onChange={ (palabra) => { setName(palabra.target.value) } } value={ name } placeholder="Name" type="text" id="name" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 border-opacity-0 focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
                         </div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="email">Email</label>
-                            <input required onChange={ (palabra) => { setEmail(palabra.target.value) } } value={ email } placeholder="Email" type="email" id="email" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
+                            <input required onChange={ (palabra) => { setEmail(palabra.target.value) } } value={ email } placeholder="Email" type="email" id="email" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 border-opacity-0 focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
                         </div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="asunto">Asunto</label>
-                            <input required onChange={ (palabra) => { setAsunto(palabra.target.value) } } value={ asunto } placeholder="Asunto" type="text" id="asunto" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
+                            <input required onChange={ (palabra) => { setAsunto(palabra.target.value) } } value={ asunto } placeholder="Asunto" type="text" id="asunto" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 border-opacity-0 focus:bg-gray-700 focus:text-blue-500" autoComplete="off" />
                         </div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="message">Mensaje</label>
-                            <textarea required onChange={ (palabra) => { setMensaje(palabra.target.value) } } value={ mensaje } placeholder="Mensaje" rows="4" id="message" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 focus:border-gray-700 focus:outline-none focus:bg-gray-700 focus:text-blue-500"></textarea>
+                            <textarea required onChange={ (palabra) => { setMensaje(palabra.target.value) } } value={ mensaje } placeholder="Mensaje" rows="4" id="message" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 border-opacity-0 focus:bg-gray-700 focus:text-blue-500"></textarea>
                         </div>
                     </div>
                     <div className="w-full pt-3">
