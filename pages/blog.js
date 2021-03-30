@@ -44,6 +44,8 @@ const Blog = () => {
                                             <>
                                             <PostElementLoading />    
                                             <PostElementLoading />    
+                                            <PostElementLoading />    
+                                            <PostElementLoading />    
                                             </>
                                             ) 
                                 }
