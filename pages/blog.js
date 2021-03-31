@@ -38,7 +38,7 @@ const Blog = () => {
                                 {
                                     posts.length > 0 ?
                                         posts.map(post => (
-                                            post ? <PostElement date={ post.date } /> : <h1>cargando....</h1>
+                                            post ? <PostElement date={ post.date } title={ post.title } /> : <h1>cargando....</h1>
                                         )
                                         ) : (
                                             <>
