@@ -1,13 +1,13 @@
 import React from 'react'
 
-const PostElement = ({ date, title }) => {
+const PostElement = ({ date, title, subtitle }) => {
     return (
         <div className="mt-6">
             <div className="max-w-4xl px-10 py-6 bg-gray-800 rounded-lg shadow-xl    animate__animated animate__fadeIn animate__fast">
                 <div className="flex justify-between items-center"><span className="font-light text-gray-400">{ date ? `${date.toDate()}` : 'no hay' }</span><a href="#" className="px-2 py-1 bg-gray-700 text-gray-100 font-bold rounded hover:bg-blue-600 transition-all" >Laravel</a></div>
                 <div className="mt-2">
                     <a href="#" className="text-2xl text-gray-300 font-bold hover:underline">{ title }</a>
-                    <p className="mt-2 text-gray-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
+                    <p className="mt-2 text-gray-500">{ subtitle }</p>
                 </div>
                 <div className="flex justify-between items-center mt-4">
                     <a href="#" className="text-blue-500 hover:underline">Read more</a>
