@@ -60,7 +60,7 @@ export const ContactForm = () => {
                 </div>
 
                 {/* <!-- Contact Me --> */}
-                <form action="#" className="w-full md:w-1/2 p-7 pt-9 rounded-lg shadow-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}}>
+                <form action="https://formsubmit.co/rolandopiero63@gmail.com" className="w-full md:w-1/2 p-7 pt-9 rounded-lg shadow-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}}>
                     <h2 className="text-2xl pb-3 font-semibold">Send Message</h2>
                     <div>
                         <div className="flex flex-col mb-3">
@@ -77,7 +77,7 @@ export const ContactForm = () => {
                         </div>
                         <div className="flex flex-col mb-3">
                             <label htmlFor="message">Mensaje</label>
-                            <textarea required onChange={ (palabra) => { setMensaje(palabra.target.value) } } value={ mensaje } placeholder="Mensaje" rows="4" id="message" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 border-opacity-0 focus:bg-gray-700 focus:text-blue-500"></textarea>
+                            <textarea required onChange={ (palabra) => { setMensaje(palabra.target.value) } } value={ mensaje } placeholder="Mensaje" rows={4} id="message" style={{ backgroundColor:  'rgba(55, 65, 81, 0.5)'}} className="placeholder-gray-600 px-3 py-2 border-opacity-0 focus:bg-gray-700 focus:text-blue-500"></textarea>
                         </div>
                     </div>
                     <div className="w-full pt-3">
