@@ -11,6 +11,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
           />
+           <meta name="robots" content="index"/>
           <link 
             href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" 
             rel="stylesheet" />
