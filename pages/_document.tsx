@@ -9,6 +9,7 @@ class MyDocument extends Document {
           <meta 
             charSet="UTF-8"
           />
+          <meta name="keywords" content="Fullstack developer, freelancer, Piero Rolando" />
           {/* Nprogress css */}
           <link
             rel="stylesheet"
@@ -22,6 +23,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           />
+          
         </Head>
         <body>
           <Main />
