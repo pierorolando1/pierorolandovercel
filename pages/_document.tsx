@@ -23,7 +23,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           />
-          
+          <title>Inicio | Piero Rolando</title>
         </Head>
         <body>
           <Main />
