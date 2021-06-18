@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { NormalPage } from '../../components/NormalPage'
 import { db } from '../../firebase.config'
+import { motion } from 'framer-motion'
 
 
 const Post = () => {
@@ -31,7 +32,9 @@ const Post = () => {
                         <div className="absolute w-full h-full">
                             <h1 className="w-full h-full flex items-end p-4 md:pb-10 pb-4 md:text-5xl sm:text-3xl text-2xl font-bold text-gray-200 max-w-8xl mx-auto">{post.title}</h1>
                         </div>
-                        <img src={post.imagen} className="h-full w-full object-cover z-0 transition-opacity" />
+                        <motion.img initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }} src={post.imagen} className="h-full w-full object-cover z-0 transition-opacity" />
                     </div>
                 </div>
                 <div className="bg-rd-600 w-full min-h-screen div-margin-top z-20 relative bg-gray-900 md:py-10 py-6">
