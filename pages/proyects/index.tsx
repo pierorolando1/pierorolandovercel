@@ -4,7 +4,7 @@ import { NormalPage } from '../../components/NormalPage'
 const FullStack = () => {
     return (
         <NormalPage title="Full Stack">
-            <div>FullStack</div>
+            <div className="h-screen">FullStack</div>
         </NormalPage>
     )
 }

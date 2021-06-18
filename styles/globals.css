@@ -96,3 +96,51 @@ a {
 input, textarea {
   border-width: 0px !important;
 }
+
+.image-container {
+  height: 20rem;
+}
+/*md:*/
+@media (min-width: 640px) {
+  .image-container {
+  height: 24rem;
+}
+}
+@media (min-width: 768px) {
+  .image-container {
+  height: 30rem;
+}
+}
+
+
+.div-margin-top {
+  margin-top: 20rem;
+}
+/*md:*/
+@media (min-width: 640px) {
+  .div-margin-top {
+  margin-top: 24rem;
+}
+}
+@media (min-width: 768px) {
+  .div-margin-top {
+  margin-top: 30rem;
+}
+}
+
+
+.max-w-8xl {
+  max-width: 90rem;
+}
+
+
+*::-webkit-scrollbar {
+  background-color: rgb(11, 18, 32);
+  width: 6px;
+  border-radius: 8rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(44, 52, 70);
+  border-radius: 8rem;
+}

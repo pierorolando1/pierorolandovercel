@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { NormalPage } from '../components/NormalPage'
-import PostElement from '../components/PostElement'
-import PostElementLoading from '../components/PostElementLoading'
-import { db } from '../firebase.config'
+import { NormalPage } from '../../components/NormalPage'
+import PostElement from '../../components/PostElement'
+import PostElementLoading from '../../components/PostElementLoading'
+import { db } from '../../firebase.config'
 
 const Blog = () => {
 
@@ -20,6 +20,7 @@ const Blog = () => {
                 });
             });
             setPosts(posts);
+            console.log(posts)
         });
     }, []);
 
@@ -38,16 +39,16 @@ const Blog = () => {
                                 {
                                     posts.length > 0 ?
                                         posts.map(post => (
-                                            post ? <PostElement date={ post.date } title={ post.title } subtitle={ post.subtitle } /> : <h1>cargando....</h1>
+                                            post ? <PostElement id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} /> : <h1>cargando....</h1>
                                         )
                                         ) : (
                                             <>
-                                            <PostElementLoading />    
-                                            <PostElementLoading />    
-                                            <PostElementLoading />    
-                                            <PostElementLoading />    
+                                                <PostElementLoading />
+                                                <PostElementLoading />
+                                                <PostElementLoading />
+                                                <PostElementLoading />
                                             </>
-                                            ) 
+                                        )
                                 }
 
 
@@ -97,5 +98,6 @@ const Blog = () => {
         </NormalPage>
     )
 }
+
 
 export default Blog
