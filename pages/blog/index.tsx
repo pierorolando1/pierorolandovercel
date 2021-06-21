@@ -8,7 +8,7 @@ const Blog = () => {
 
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        db.collection("posts").onSnapshot((querySnapshot) => {
+        db.collection("posts").orderBy("date", "desc").onSnapshot((querySnapshot) => {
             const posts = [];
             querySnapshot.docs.forEach((doc) => {
                 const { title, subtitle, date } = doc.data();
