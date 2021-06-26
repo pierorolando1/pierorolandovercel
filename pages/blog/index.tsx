@@ -1,27 +1,52 @@
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { NormalPage } from '../../components/NormalPage'
 import PostElement from '../../components/PostElement'
 import PostElementLoading from '../../components/PostElementLoading'
 import { db } from '../../firebase.config'
 
+interface Author {
+    name: string,
+    id: string,
+    photo: string,
+}
+
 const Blog = () => {
 
     const [posts, setPosts] = useState([])
+    const [authors, setAuthors] = useState([])
     useEffect(() => {
         db.collection("posts").orderBy("date", "desc").onSnapshot((querySnapshot) => {
             const posts = [];
             querySnapshot.docs.forEach((doc) => {
-                const { title, subtitle, date } = doc.data();
+                const { title, subtitle, date, category } = doc.data();
                 posts.push({
                     id: doc.id,
                     title,
                     subtitle,
                     date,
+                    category
                 });
             });
             setPosts(posts);
             console.log(posts)
         });
+
+        db.collection("authors").onSnapshot((querySnapshot) => {
+            const authors = [];
+            querySnapshot.docs.forEach((doc) => {
+                const { name, photo } = doc.data();
+                authors.push({
+                    id: doc.id,
+                    name,
+                    photo,
+
+                });
+            });
+            setAuthors(authors);
+            console.log(authors)
+        });
+        
     }, []);
 
     return (
@@ -39,7 +64,7 @@ const Blog = () => {
                                 {
                                     posts.length > 0 ?
                                         posts.map(post => (
-                                            post ? <PostElement id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} /> : <h1>cargando....</h1>
+                                            post ? <PostElement id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} /> : <h1>cargando....</h1>
                                         )
                                         ) : (
                                             <>
@@ -69,8 +94,14 @@ const Blog = () => {
                                     <div className="flex flex-col bg-gray-800 max-w-sm px-6 py-4 mx-auto rounded-lg shadow-md">
                                         <ul className="-mx-4">
                                             <li className="flex items-center">
-                                                <img src="https://images2.minutemediacdn.com/image/fetch/w_736,h_485,c_fill,g_auto,f_auto/https%3A%2F%2Fprincerupertstower.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2017%2F07%2F1231288004-850x560.jpeg" alt="avatar" className="w-10 h-10 object-cover rounded-full mx-4" />
-                                                <p><a href="#" className="text-gray-400 font-bold mx-1 hover:underline">Piero Rolando</a><span className="text-gray-500 text-sm font-light">Created 23 Posts</span></p>
+                                                {
+                                                    authors.map((author: Author) => {
+                                                        return <>
+                                                            <img src={author.photo} alt="avatar" className="w-10 h-10 object-cover rounded-full mx-4" />
+                                                            <p><Link href={`blog/authors/${author.id}`}><a className="text-gray-400 font-bold mx-1 hover:underline">{author.name}</a></Link></p>
+                                                        </>
+                                                    })
+                                                }
                                             </li>
                                         </ul>
                                     </div>
