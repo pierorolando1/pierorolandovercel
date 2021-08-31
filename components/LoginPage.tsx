@@ -25,13 +25,6 @@ const LoginPage = () => {
                                     <input className="w-full px-3 py-2 mb-3 text-sm leading-tight bg-gray-900 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
                                     <p className="text-xs italic text-red-500">Andas muy sapo amigo.</p>
                                 </div>
-
-                                <div className="mb-4">
-                                    <label className="block mb-2 text-sm font-bold text-gray-500" htmlFor="password"> Second Password </label>
-                                    <input className="w-full px-3 py-2 mb-3 text-sm leading-tight bg-gray-900 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
-                                    <p className="text-xs italic text-red-500">Solo don Piero puede entrar aquí.</p>
-                                </div>
-
                                 <div className="text-center">
                                     <button className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">Sign In</button>
                                 </div>
