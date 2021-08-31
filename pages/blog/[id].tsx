@@ -4,7 +4,7 @@ import { NormalPage } from '../../components/NormalPage'
 import { db } from '../../firebase.config'
 import { motion } from 'framer-motion'
 import { getAllPostIds, getPost, Post } from '../../components/helpers'
-import { NextSeo } from 'next-seo'
+import { DefaultSeo } from 'next-seo'
 
 export async function getStaticPaths() {
     const data = await getAllPostIds()
@@ -35,35 +35,35 @@ const PostPage = ({postData}) => {
             //const { id } = router.query
     const post: Post = JSON.parse(postData)
     useEffect(() => {
+        console.log(post)
         /*(async () => {
-            const id = window.location.pathname.split("blog/")[1]
-            //const { id } = router.query
-            
-            const data = await db.collection("posts").doc(`${id}`).get()
-            const post = data.data()
-            setPost(post)
+            document.getElementById("container").innerHTML = post.content
         })()*/
-        document.getElementById("container").innerHTML = post?.content
 
 
     }, [])
 
     return (
-        <NextSeo
-            openGraph={{
-                title: post.title,
-                description: post.subtitle,
-                images: [
-                    {
-                        url: post.imagen,
-                        width: 800,
-                        height: 600,
-                        alt: 'Image',
-                    },
-                ],
-            }}
-        >
-            <NormalPage footer={false} title={post?.title}>
+
+        <>
+            <DefaultSeo
+                title={post.title}
+                description={post.subtitle}
+                openGraph={{
+                    title: post.title,
+                      description: post.subtitle,
+                      images: [
+                        {
+                          url: post.imagen,
+                          width: 900,
+                          height: 506,
+                          alt: 'Image',
+                        },
+                      ],
+                      site_name: 'Blog',
+                    }}
+                />
+        <NormalPage footer={false} title={post?.title}>
                 <div className="bg-gray-900 w-full min-h-screen">
                     <div className="top-0 fixed image-container w-full">
                         <div className="relative w-full h-full ">
@@ -77,7 +77,7 @@ const PostPage = ({postData}) => {
                         </div>
                     </div>
                     <div className="bg-rd-600 w-full min-h-screen div-margin-top z-20 relative bg-gray-900 md:py-10 py-6">
-                        <div className="w-full h-full max-w-8xl mx-auto px-4" id="container">
+                        <div className="w-full h-full max-w-8xl mx-auto px-4" id="container" dangerouslySetInnerHTML={{__html: post.content}}>
                             {/*AQUI IRIA TODO EL CODIGO EN FIREBASE*/}
 
                             {/*AQUI IRIA TODO EL CODIGO EN FIREBASE*/}
@@ -85,7 +85,7 @@ const PostPage = ({postData}) => {
                     </div>
                 </div>
             </NormalPage>
-        </NextSeo>
+        </>
     )
 }
 
