@@ -1,10 +1,35 @@
 import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { firebase } from '../firebase.config'
+import { authState } from './helpers'
+import { Redirect } from './Redirect'
+
 
 const LoginPage = () => {
+
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [user, setUser] = useState(authState.loading)
+
+    const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        await firebase.auth().signInWithEmailAndPassword(email, password)
+    }
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(user => {
+            user == null ? setUser(authState.notLoged) : setUser(authState.loged)
+        })
+    }, [])
+
     return (
-        <div className="bg-gray-900 ">
+        user == authState.notLoged ?
+        (<div className="bg-gray-900 h-full">
             {/* <!-- Container --> */}
-            <div className="container mx-auto h-screen">
+            <div className="container mx-auto min-h-screen h-full">
                 <div className="flex justify-center py-60 px-6">
                     {/* <!-- Row --> */}
                     <div className="w-full xl:w-3/4 lg:w-11/12 flex h-auto">
@@ -14,28 +39,32 @@ const LoginPage = () => {
                         ></div>
                         {/* <!-- Col --> */}
                         <div className="w-full lg:w-1/2 bg-gray-800 p-5 rounded-lg lg:rounded-l-none">
-                            <h3 className="pt-4 text-2xl text-center text-white font-semibold">Welcome Pickford!</h3>
-                            <form className="px-8 pt-6 pb-8 mb-4 bg-gray-800 rounded">
+                            <h3 className="pt-4 text-2xl text-center text-white font-semibold">Welcome papu!</h3>
+                            <form className="px-8 pt-6 pb-8 mb-4 bg-gray-800 rounded" onSubmit={handleSubmit}>
                                 <div className="mb-4">
-                                    <label className="block mb-2 text-sm font-bold text-gray-500" htmlFor="username"> Username </label>
-                                    <input className="w-full bg-gray-900 px-3 py-2 text-sm leading-tight text-gray-700 rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+                                    <label className="block mb-2 text-sm font-bold text-gray-500" htmlFor="email"> Email </label>
+                                    <input className="w-full bg-gray-900 px-3 py-2 text-sm leading-tight text-gray-200 rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                                 </div>
                                 <div className="mb-4">
                                     <label className="block mb-2 text-sm font-bold text-gray-500" htmlFor="password"> Password </label>
-                                    <input className="w-full px-3 py-2 mb-3 text-sm leading-tight bg-gray-900 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
-                                    <p className="text-xs italic text-red-500">Andas muy sapo amigo.</p>
+                                    <input className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-400 bg-gray-900 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" onChange={e => setPassword(e.target.value)} />
                                 </div>
                                 <div className="text-center">
-                                    <button className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">Sign In</button>
+                                    <button className="transition-all w-full px-4 py-2 font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="submit">Sign In</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>)
+:
+    user == authState.loged && (<Redirect to="/admin" />)
 
     )
+
+    
 }
+
 
 export default LoginPage

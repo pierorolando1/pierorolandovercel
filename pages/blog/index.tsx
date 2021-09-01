@@ -6,6 +6,7 @@ import PostElementLoading from '../../components/PostElementLoading'
 import { db } from '../../firebase.config'
 
 interface Author {
+    uid?: string,
     name: string,
     id: string,
     photo: string,
@@ -91,18 +92,23 @@ const Blog = () => {
                             <div className="-mx-8 w-4/12 hidden lg:block  fixed right-10">
                                 <div className="px-8">
                                     <h1 className="mb-4 text-xl font-bold text-gray-300">Authors</h1>
-                                    <div className="flex flex-col bg-gray-800 max-w-sm px-6 py-4 mx-auto rounded-lg shadow-md">
+                                    <div className={"flex flex-col bg-gray-800 max-w-sm px-6 py-1 mx-auto rounded-lg shadow-md " + (authors.length == 0 ? "animate-pulse" : "")}>
                                         <ul className="-mx-4">
-                                            <li className="flex items-center">
                                                 {
+                                                    authors.length > 0 ?
                                                     authors.map((author: Author) => {
-                                                        return <>
-                                                            <img src={author.photo} alt="avatar" className="w-10 h-10 object-cover rounded-full mx-4" />
-                                                            <p><Link href={`blog/authors/${author.id}`}><a className="text-gray-400 font-bold mx-1 hover:underline">{author.name}</a></Link></p>
-                                                        </>
+                                                        return  <li className="flex my-5 items-center animate__animated animate__fadeIn animate__fast">
+                                                                    <img placeholder={"<h1>hola</h1>"} src={author.photo} alt=" " className="bg-gray-700 w-10 h-10 object-cover rounded-full mx-4" />
+                                                                    <p><Link href={`blog/authors/${author.id}`}><a className="text-gray-400 font-bold mx-1 hover:underline">{author.name}</a></Link></p>
+                                                                </li>
                                                     })
+                                                    : (
+                                                        <li className="flex my-5 items-center animate__animated animate__fast animate__fadeOut animate-pulse">
+                                                            <div className="w-10 h-10 bg-gray-700 rounded-full mx-4"></div>
+                                                            <div className="bg-gray-700 w-2/4 h-5 rounded-lg"></div>
+                                                        </li>
+                                                    )
                                                 }
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>

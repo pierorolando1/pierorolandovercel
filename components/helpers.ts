@@ -10,6 +10,20 @@ export interface Post {
     content?:string
 }
 
+export interface Author {
+    uid?: string,
+    name: string,
+    id: string,
+    photo: string,
+}
+
+
+export enum authState {
+    loading,
+    notLoged,
+    loged
+}
+
 
 export const getAllPostIds = async () => {
 
@@ -23,10 +37,31 @@ export const getAllPostIds = async () => {
     return posts
 }
 
+export const getAllAuthorsIds = async () => {
+
+    const snapshot = await db.collection('authors').get()
+    var authors = []
+    snapshot.forEach((doc) => {
+        authors.push({
+            id: doc.id,
+        })
+    })
+    return authors
+}
+
+
 export const getPost = async (id: string) => {
     const data = await db.collection("posts").doc(`${id}`).get()
     const post = data.data()
     console.log(post)
 
     return post
+}
+
+export const getAuthor = async (id: string) => {
+    const data = await db.collection("authors").doc(`${id}`).get()
+    const author = data.data()
+    console.log(author)
+
+    return author
 }
