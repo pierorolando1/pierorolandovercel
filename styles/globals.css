@@ -126,3 +126,11 @@ input, textarea {
   scrollbar-color: rgba(31, 41, 55) rgba(55, 65, 81);
   scrollbar-width: thin;
 }
+
+.swal-overlay {
+  backdrop-filter: blur(4px);
+}
+
+.swal-modal {
+  background-color: rgba(31, 41, 55);
+}
