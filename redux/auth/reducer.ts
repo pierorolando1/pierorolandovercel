@@ -13,6 +13,9 @@ export const authReducer = (state = initialState, action: {payload:any, type:str
         case types.logout:
             return { login: false }
 
+        case types.addUsername:
+            return { ...state, username: action.payload }
+
         default:
             return state;
     }

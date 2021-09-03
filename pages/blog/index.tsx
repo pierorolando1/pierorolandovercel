@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { delay } from '../../components/helpers'
 import { NormalPage } from '../../components/NormalPage'
 import PostElement from '../../components/PostElement'
 import PostElementLoading from '../../components/PostElementLoading'
@@ -16,19 +17,25 @@ const Blog = () => {
 
     const [posts, setPosts] = useState([])
     const [authors, setAuthors] = useState([])
+    
     useEffect(() => {
-        db.collection("posts").orderBy("date", "desc").onSnapshot((querySnapshot) => {
+        db.collection("posts").orderBy("date", "desc").onSnapshot(async (querySnapshot) => {
             const posts = [];
             querySnapshot.docs.forEach((doc) => {
-                const { title, subtitle, date, category } = doc.data();
+                const { title, subtitle, date, category, authorID, authorName, authorPhoto } = doc.data();
                 posts.push({
                     id: doc.id,
                     title,
                     subtitle,
                     date,
-                    category
+                    category,
+                    authorID,
+                    authorName,
+                    authorPhoto
                 });
             });
+            await delay(500);
+
             setPosts(posts);
             console.log(posts)
         });
@@ -65,7 +72,7 @@ const Blog = () => {
                                 {
                                     posts.length > 0 ?
                                         posts.map(post => (
-                                            post ? <PostElement id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} /> : <h1>cargando....</h1>
+                                            post ? <PostElement authorPhoto={post.authorPhoto} authorID={post.authorID} authorName={post.authorName} id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} /> : <h1>cargando....</h1>
                                         )
                                         ) : (
                                             <>

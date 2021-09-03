@@ -63,5 +63,22 @@ export const getAuthor = async (id: string) => {
     const author = data.data()
     console.log(author)
 
-    return author
+    return {
+        id: data.id,
+        name: author.name,
+        photo: author.photo
+    }
+}
+
+export const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+
+export interface stateRedux {
+    auth: {
+        login: boolean,
+        uid: string, 
+        displayName: string,
+        photoUrl:string,
+        email:string,
+        username:string,
+    }
 }

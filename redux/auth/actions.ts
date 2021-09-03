@@ -16,3 +16,8 @@ export const startLogout = () => {
 export const logout = () => ({
     type: types.logout
 })
+
+export const addUsername = (username:string) => ({
+    type: types.addUsername,
+    payload: username
+})

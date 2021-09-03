@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { firebase } from '../firebase.config'
+import { login } from '../redux/auth/actions'
 import { authState } from './helpers'
 import { Redirect } from './Redirect'
 
@@ -12,6 +14,7 @@ const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [user, setUser] = useState(authState.loading)
+    const dispatch = useDispatch()
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -21,7 +24,19 @@ const LoginPage = () => {
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(user => {
-            user == null ? setUser(authState.notLoged) : setUser(authState.loged)
+
+            if(user == null) {
+                setUser(authState.notLoged)
+            } else {
+                const newUser = {
+                    uid: user.uid,
+                    displayName: user.displayName,
+                    photoUrl: user.photoURL,
+                    email: user.email,
+                }
+                setUser(authState.loged),
+                dispatch(login(newUser))
+            }
         })
     }, [])
 

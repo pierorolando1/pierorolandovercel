@@ -134,3 +134,38 @@ input, textarea {
 .swal-modal {
   background-color: rgba(31, 41, 55);
 }
+
+.swal-icon--success:after, .swal-icon--success:before {
+  background: #fff0;
+}
+
+.swal-icon--success__hide-corners {
+  background: #fff0;
+}
+
+.swal-button--confirm {
+  /*background-color: rgba(29, 78, 216);*/
+  background-color: rgba(37, 99, 235);
+}
+
+.swal-button--catch {
+  background-color: rgba(37, 99, 235);
+}
+
+.swal-button--cancel {
+  background-color: rgba(185, 28, 28);
+  color: white;
+}
+
+.swal-button--cancel:hover {
+  color: black;
+}
+
+.swal-title {
+  font-size: 27px;
+  color: rgba(249, 250, 251);
+}
+
+.swal-text {
+  color: rgba(229, 231, 235)
+}
