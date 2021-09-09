@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { AdminHomePage } from '../../components/AdminHome'
 import { ProtectedComponent } from '../../components/Auth/ProtectedComponent'
+import { GeneralPage } from '../../components/GeneralPage'
 import { authState } from '../../components/helpers'
 import { firebase } from '../../firebase.config'
 import { login } from '../../redux/auth/actions'
@@ -35,7 +36,9 @@ const AdminHome = () => {
             <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet" />
         </Head>
         <ProtectedComponent userState={user} redirecTo="/login">
-            <AdminHomePage />
+            <GeneralPage>
+                <AdminHomePage />
+            </GeneralPage>
         </ProtectedComponent>
         </>
     )

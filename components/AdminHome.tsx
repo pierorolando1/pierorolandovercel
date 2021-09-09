@@ -1,12 +1,19 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import swal from '@sweetalert/with-react'
 import Swal from 'sweetalert'
-import Head from 'next/head'
 import { useState } from 'react'
 import { Dashboard } from './Dashboard'
 import { Messages } from './Messages'
+import { CreatePost } from './CreatePost'
+
+import Swal2 from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { useSelector } from 'react-redux'
+import { stateRedux } from './helpers'
+import { firebase } from '../firebase.config'
+
+const MySwal = withReactContent(Swal2)
 
 export const AdminHomePage = () => {
     enum page {
@@ -17,29 +24,26 @@ export const AdminHomePage = () => {
 
     const router = useRouter()
     const [actualPage, setActualPage] = useState(page.home)
+    const authState = useSelector((state:stateRedux) => state.auth)
+
+    const handleClick = () => {
+        console.log("HOLA")
+        const input:any = document.querySelector("#fileupload")
+        input.click()
+    }
 
     const newPost = () => {
-        swal({
-            //TODO button: {catch: "Crear"},
-            className: "w-4/5",
-            //button: "Crear",
-            buttons: {
-                cancel: "Cancelar",
-                catch: {
-                  text: "Crear!",
-                  value: "save",
-                },
-              },
+        console.log(authState)
+        MySwal.fire({
+            title: <CreatePost authState={authState} />,
+            allowOutsideClick: false,
+            showConfirmButton: false,
             
-            closeOnClickOutside: false,
-            content: (
-                <div>
-                    <input className="w-full text-3xl font-black bg-transparent focus:outline-none focus:border-transparent text-gray-50" type="text" placeholder="Titulo" />
-                    <input className="w-full text-xl bg-transparent font-bold text-gray-100" type="text" placeholder="Descripción" />
-                    <textarea className="w-full bg-transparent" placeholder="Contenido"></textarea>
-                </div>
-            )
-        })
+        }
+            //TODO button: {catch: "Crear"},
+            //button: "Crear",
+            
+        )
     }
 
     useEffect(() => {
@@ -55,10 +59,10 @@ export const AdminHomePage = () => {
             <div className="flex transition-all">
                 <section className="w-1/6 h-screen bg-gray-800 overflow-auto md:block hidden text-gray-500">
                     <img onClick={() => Swal(
-            "Hola Val",
-            "Espero estes bien:)",
-            'success'
-        )} src="https://i2-prod.liverpoolecho.co.uk/incoming/article20510740.ece/ALTERNATES/s1200c/0_GettyImages-1232631276.jpg" alt="" className="w-16 h-16 lg:w-24 lg:h-24 md:mt-14 rounded-full mx-auto my-5 object-cover cursor-pointer" />
+                        "Hola Val",
+                        "Espero estes bien:)",
+                        'success'
+                    )} src={firebase.auth().currentUser.photoURL} alt="" className="w-16 h-16 lg:w-24 lg:h-24 md:mt-14 rounded-full mx-auto my-5 object-cover cursor-pointer" />
                     <button className={ `focus:outline-none transition-all hover:bg-gray-900 w-full flex items-center justify-center lg:py-0 py-2 ${actualPage == page.home ? "bg-gray-900 text-gray-200": ""}`} onClick={() => setActualPage(page.home)}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />

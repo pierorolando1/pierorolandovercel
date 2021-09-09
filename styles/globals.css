@@ -127,12 +127,16 @@ input, textarea {
   scrollbar-width: thin;
 }
 
-.swal-overlay {
+.swal-overlay, .swal2-container {
   backdrop-filter: blur(4px);
 }
 
-.swal-modal {
-  background-color: rgba(31, 41, 55);
+.swal2-modal {
+  width: 80% !important;
+}
+
+.swal-modal, .swal2-modal {
+  background-color: rgba(31, 41, 55) !important;
 }
 
 .swal-icon--success:after, .swal-icon--success:before {
@@ -168,4 +172,31 @@ input, textarea {
 
 .swal-text {
   color: rgba(229, 231, 235)
+}
+
+button{
+  opacity: 90% !important;
+}
+button:hover {
+  opacity: 100% !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.ce-block--selected .ce-block__content {
+  background-color: rgba(55, 65, 81);
+}
+
+.ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button, .ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button, .ql-snow.ql-toolbar button.ql-active, .ql-snow .ql-toolbar button.ql-active, .ql-snow.ql-toolbar .ql-picker-label, .ql-snow .ql-toolbar .ql-picker-label, .ql-snow.ql-toolbar .ql-picker-label.ql-active, .ql-snow .ql-toolbar .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker-item, .ql-snow .ql-toolbar .ql-picker-item, .ql-snow.ql-toolbar .ql-picker-item.ql-selected, .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+  filter: invert();
+}
+
+.ql-toolbar.ql-snow {
+  border: 0.8px solid #374151c7 !important;
+}
+
+.ql-container.ql-snow {
+  border: 0.8px solid #374151c7 !important;
 }

@@ -82,3 +82,56 @@ export interface stateRedux {
         username:string,
     }
 }
+
+export interface PostToBlog {
+    title:string,
+    subtitle:string,
+    imagen:string,
+    date:Date,
+    content: string,
+    authorId:string,
+    authorName?:string,
+    authorPhoto?:string,
+    category:string,
+}
+
+export const fileUpload = async (file) => {
+
+    const cloudUrl = 'https://api.cloudinary.com/v1_1/piero-rolando/upload';
+
+    const formData = new FormData();
+    formData.append('upload_preset', 'planeta-interno');
+    formData.append('file', file);
+
+    try {
+
+        const resp = await fetch(cloudUrl, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (resp.ok) {
+            const cloudResp = await resp.json();
+            return cloudResp.secure_url;
+        } else {
+            return null;
+        }
+
+    } catch (err) {
+        throw err;
+    }
+
+}
+
+export const removeSpecials = (str:string) => {
+    var lower = str.toLowerCase();
+    var upper = str.toUpperCase();
+    var res = "";
+    
+    for(var i=0; i<lower.length; ++i) {
+        if(lower[i] != upper[i] || lower[i].trim() === '')
+            res += str[i];
+    }
+
+    return res;
+}
