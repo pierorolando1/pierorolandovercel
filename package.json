@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@editorjs/editorjs": "^2.22.2",
+    "@headlessui/react": "^1.4.1",
     "@iconscout/unicons": "^3.0.6",
     "@sweetalert/with-react": "^0.1.1",
     "@tailwindcss/forms": "^0.3.2",

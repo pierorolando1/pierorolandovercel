@@ -1,54 +1,7 @@
 import Quill from "quill"
 import React, { useEffect } from "react"
-import styled from "styled-components"
+import { ContainerEditor } from "./helpers"
 
-const ContainerEditor = styled.div`
-    min-height: 100vh;
-    background-color: rgba(31, 41, 55);
-    h1,h2,h3 {
-        color: rgba(209,213,219,1);
-    }
-    h2, h3 {
-        padding-top: .45rem;
-        padding-bottom: .45rem;
-    }
-    h1 {
-        font-size: 1.125rem;
-        line-height: 1.75rem;
-
-        padding-top: .75rem;
-        padding-bottom: .75rem;
-    }
-    
-    @media (min-width: 768px){
-        h1 {
-            font-size: 1.5rem;
-            line-height: 2rem;
-        }
-        h2 {
-            font-size: 1.35rem;
-            line-height: 1.85rem;
-        }
-        h3 {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-        }
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        color: rgba(156,163,175,1);
-    }
-    
-    strong {
-        font-weight: 700;
-    }
-
-    .ql-clipboard {
-        display: none;
-    }
-`
 const EditorJsView = () => {
     useEffect(() => {
         const postId:string = window.location.pathname.split("/admin/post/")[1].split("/prev")[0]

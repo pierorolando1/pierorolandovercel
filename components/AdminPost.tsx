@@ -4,7 +4,7 @@ import swal from '@sweetalert/with-react'
 import Swal from 'sweetalert'
 import Link from 'next/link'
 
-export const AdminPost = ({ id, title, image }) => {
+export const AdminPost = ({ id, title, image, getPostsAndSetState }) => {
 
     const deletePost = async () => {
         swal({
@@ -33,6 +33,7 @@ export const AdminPost = ({ id, title, image }) => {
                     if(value == "confirm") {
                         await db.collection("posts").doc(id).delete()
                         Swal("Listo", "borrao", "success")
+                        getPostsAndSetState()
                     }
                 })
                 

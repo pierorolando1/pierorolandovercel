@@ -5,6 +5,7 @@ import { db } from '../../firebase.config'
 import { motion } from 'framer-motion'
 import { getAllPostIds, getPost, Post } from '../../components/helpers'
 import { DefaultSeo } from 'next-seo'
+import styled from 'styled-components'
 
 export async function getStaticPaths() {
     const data = await getAllPostIds()
@@ -30,6 +31,55 @@ export async function getStaticProps({ params }) {
         }
     }
 }
+
+const Div = styled.div`
+    height: 100%;
+    width: 100%;
+
+    h1,h2,h3 {
+        color: rgba(209,213,219,1);
+    }
+    h2, h3 {
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+    }
+    h1 {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+    
+    @media (min-width: 768px){
+        h1 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        h2 {
+            font-size: 1.35rem;
+            line-height: 1.85rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: rgba(156,163,175,1);
+    }
+    
+    strong {
+        font-weight: 700;
+    }
+
+    .ql-clipboard {
+        display: none;
+    }
+`
 
 const PostPage = ({postData}) => {
             //const { id } = router.query
@@ -77,12 +127,12 @@ const PostPage = ({postData}) => {
                                 <div className="w-full h-full z-0 bg-cover bg-center" style={{backgroundImage: `url(${post?.imagen})`}}></div>
                         </div>
                     </div>
-                    <div className="bg-rd-600 w-full min-h-screen div-margin-top z-20 relative bg-gray-900 md:py-10 py-6">
-                        <div className="w-full h-full max-w-8xl mx-auto px-4" id="container" dangerouslySetInnerHTML={{__html: post.content}}>
+                    <div className="bg-rd-600 w-full min-h-screen div-margin-top z-20 relative bg-gray-900 md:py-10 py-6"> {/*TODO*/ }
+                        <Div className="w-full h-full max-w-8xl mx-auto px-4" id="container" dangerouslySetInnerHTML={{__html: post.content}}>
                             {/*AQUI IRIA TODO EL CODIGO EN FIREBASE*/}
 
                             {/*AQUI IRIA TODO EL CODIGO EN FIREBASE*/}
-                        </div>
+                        </Div>
                     </div>
                 </div>
             </NormalPage>

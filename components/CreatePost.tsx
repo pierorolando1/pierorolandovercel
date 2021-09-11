@@ -40,7 +40,7 @@ export const CreatePost = ({authState}) => {
             title,
             subtitle,
             content,
-            authorId: authState.username,
+            authorID: authState.username,
             authorName: authState.displayName,
             authorPhoto: authState.photoUrl,
             date: new Date(),

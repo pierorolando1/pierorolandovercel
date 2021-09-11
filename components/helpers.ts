@@ -1,3 +1,4 @@
+import styled from "styled-components"
 import { db } from '../firebase.config'
 
 export interface Post {
@@ -89,7 +90,7 @@ export interface PostToBlog {
     imagen:string,
     date:Date,
     content: string,
-    authorId:string,
+    authorID:string,
     authorName?:string,
     authorPhoto?:string,
     category:string,
@@ -135,3 +136,52 @@ export const removeSpecials = (str:string) => {
 
     return res;
 }
+
+
+export const ContainerEditor = styled.div`
+    min-height: 100vh;
+    background-color: rgba(31, 41, 55);
+    h1,h2,h3 {
+        color: rgba(209,213,219,1);
+    }
+    h2, h3 {
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+    }
+    h1 {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+    
+    @media (min-width: 768px){
+        h1 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        h2 {
+            font-size: 1.35rem;
+            line-height: 1.85rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: rgba(156,163,175,1);
+    }
+    
+    strong {
+        font-weight: 700;
+    }
+
+    .ql-clipboard {
+        display: none;
+    }
+`
