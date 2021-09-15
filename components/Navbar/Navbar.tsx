@@ -40,33 +40,16 @@ export default function Navbar() {
           <nav className="hidden md:flex space-x-10">
             <Link href="/"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Inicio</a></Link>
             <Link href="/#main"><a className="text-base font-medium text-gray-500 hover:text-gray-400">¿Quien soy?</a></Link>
-            <div className="relative">
-              {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-              <a onClick={() => { setProyectsnav(!proyectsnav) }} /*onClick={ () => { setProyectsnav(!proyectsnav) } }*/ className={`${proyectsnav ? 'text-gray-500' : 'text-gray-300'} cursor-pointer rounded-md inline-flex items-center text-base font-medium hover:text-gray-400" aria-expanded="false`} >
+            {/* <div className="relative">
+              <a onClick={() => { setProyectsnav(!proyectsnav) }} className={`${proyectsnav ? 'text-gray-500' : 'text-gray-300'} cursor-pointer rounded-md inline-flex items-center text-base font-medium hover:text-gray-400" aria-expanded="false`} >
                 <span>Proyectos</span>
-                {/* <!--
-              Heroicon name: solid/chevron-down
-
-              Item active: "text-gray-600", Item inactive: "text-gray-400"
-            --> */}
                 <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </a>
-
-              {/* <!--
-            'Solutions' flyout menu, show/hide based on flyout menu state.
-
-            Entering: "transition ease-out duration-200"
-              From: "opacity-0 translate-y-1"
-              To: "opacity-100 translate-y-0"
-            Leaving: "transition ease-in duration-150"
-              From: "opacity-100 translate-y-0"
-              To: "opacity-0 translate-y-1" 
-          --> */}
               <SubMenu active={proyectsnav} setProyectsnav={setProyectsnav} />
-            </div>
-
+            </div> */}
+            <Link href="/proyectos"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Proyectos</a></Link>
             <Link href="/blog"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a></Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">

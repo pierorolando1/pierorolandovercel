@@ -1,6 +1,6 @@
 import Quill from "quill"
 import React, { useEffect } from "react"
-import { ContainerEditor } from "./helpers"
+import { ContainerEditor } from "../helpers"
 
 const EditorJsView = () => {
     useEffect(() => {

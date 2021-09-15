@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { NormalPage } from '../../components/NormalPage'
 import { db } from '../../firebase.config'
 import { motion } from 'framer-motion'
-import { getAllPostIds, getPost, Post } from '../../components/helpers'
+import { getAllPostIds, getPost, Post } from '../../helpers'
 import { DefaultSeo } from 'next-seo'
 import styled from 'styled-components'
 

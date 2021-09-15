@@ -7,7 +7,7 @@ import { EditPostPlaceholder } from '../../../../components/Admin Panel/EditPost
 import { db } from '../../../../firebase.config'
 import { useState } from 'react'
 import { Redirect } from '../../../../components/Redirect'
-import { Post } from '../../../../components/helpers'
+import { Post } from '../../../../helpers'
 import { AdminNavBar } from '../../../../components/Navbar/AdminNavBar'
 
 const EditorJs = dynamic(() => import("../../../../components/EditorJs"), { ssr: false })

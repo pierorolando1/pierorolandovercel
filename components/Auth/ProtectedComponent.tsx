@@ -1,5 +1,5 @@
 import { Redirect } from '../Redirect'
-import { authState } from "../helpers"
+import { authState } from "../../helpers"
 import { useRouter } from 'next/router';
 import NProgress from "nprogress";
 import nProgress from "nprogress";

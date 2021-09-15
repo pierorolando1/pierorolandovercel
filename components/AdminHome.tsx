@@ -10,7 +10,7 @@ import { CreatePost } from './CreatePost'
 import Swal2 from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useSelector } from 'react-redux'
-import { openModalToEditProfile, stateRedux } from './helpers'
+import { openModalToEditProfile, stateRedux } from '../helpers'
 import { firebase } from '../firebase.config'
 import ProfileAdmin from './Auth/ProfileAdmin'
 import Modal from 'react-modal';

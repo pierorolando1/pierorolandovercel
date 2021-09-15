@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import Quill from 'quill'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
-import { delay } from '../../../../components/helpers'
+import { delay } from '../../../../helpers'
 
 const EditorJsView = dynamic(() => import("../../../../components/EditorJsView"),{ssr:false})
 

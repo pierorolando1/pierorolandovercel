@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Quill from 'quill'
 import 'quill/dist/quill.snow.css'
 import { useState } from 'react';
-import { delay } from './helpers';
+import { delay } from '../helpers';
 import ClockLoader from 'react-spinners/ClockLoader'
 import { db } from '../firebase.config';
 import swal from 'sweetalert';

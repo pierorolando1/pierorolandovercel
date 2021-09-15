@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { delay, fileUpload, PostToBlog, removeSpecials, stateRedux } from "./helpers";
+import { delay, fileUpload, PostToBlog, removeSpecials, stateRedux } from "../helpers";
 import BarLoader from 'react-spinners/BarLoader'
 import ClockLoader from 'react-spinners/ClockLoader'
 import { firebase, db } from '../firebase.config'

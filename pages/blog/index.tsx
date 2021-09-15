@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { delay } from '../../components/helpers'
+import { delay } from '../../helpers'
 import { NormalPage } from '../../components/NormalPage'
 import PostElement from '../../components/PostElement'
 import PostElementLoading from '../../components/PostElementLoading'
