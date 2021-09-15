@@ -2,14 +2,25 @@ import React from 'react'
 import Link from 'next/link'
 import moment from 'moment';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 
-const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName, authorID, authorPhoto}) => {
+const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName, authorID, authorPhoto, imagen}) => {
+    const [hover, setHover] = useState(false)
     return (
         <div className="mt-6">
             <motion.div initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }} className="max-w-4xl px-10 py-6 bg-gray-800 rounded-lg shadow-xl">
+                exit={{ opacity: 0 }}
+                className="max-w-4xl px-10 py-6 bg-gray-800 rounded-lg shadow-xl relative bg-cover bg-center" 
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                style={
+                    hover ?
+                    {background: `url(${imagen})`, backgroundPosition: "center", backgroundSize: "cover"}
+                    : {}
+                }
+            >
                 <div className="flex justify-between items-center"><span className="font-light text-gray-400">{date ? `${ moment(date.toDate()).format("DD | MM | YY")}` : 'no hay'}</span><a href="#" className="px-2 py-1 bg-gray-700 text-gray-100 font-bold rounded hover:bg-blue-600 transition-all" >{category}</a></div>
                 <div className="mt-2">
                     <Link href={`/blog/${id}`}>

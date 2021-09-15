@@ -185,3 +185,8 @@ export const ContainerEditor = styled.div`
         display: none;
     }
 `
+
+
+export const openModalToEditProfile = () => {
+    
+}

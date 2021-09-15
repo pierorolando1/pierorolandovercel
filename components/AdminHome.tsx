@@ -10,9 +10,10 @@ import { CreatePost } from './CreatePost'
 import Swal2 from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useSelector } from 'react-redux'
-import { stateRedux } from './helpers'
+import { openModalToEditProfile, stateRedux } from './helpers'
 import { firebase } from '../firebase.config'
-import ProfileAdmin from './ProfileAdmin'
+import ProfileAdmin from './Auth/ProfileAdmin'
+import Modal from 'react-modal';
 
 const MySwal = withReactContent(Swal2)
 
@@ -26,6 +27,7 @@ export const AdminHomePage = () => {
     const router = useRouter()
     const [actualPage, setActualPage] = useState(page.home)
     const authState = useSelector((state:stateRedux) => state.auth)
+    const [modalopen, setModalopen] = useState(false)
 
     const handleClick = () => {
         console.log("HOLA")
@@ -56,10 +58,26 @@ export const AdminHomePage = () => {
     }, [])
     return (
         <div>
-            
             <div className="flex transition-all">
-                <section className="w-1/6 h-screen bg-gray-800 overflow-auto md:block hidden text-gray-500">
-                    <img onClick={() => setActualPage(page.profile)} src={firebase.auth().currentUser.photoURL} alt="" className="w-16 h-16 lg:w-24 lg:h-24 md:mt-14 rounded-full mx-auto my-5 object-cover cursor-pointer" />
+                <Modal
+                    isOpen={!modalopen}
+                    style={{
+                        overlay: {
+                            backdropFilter: 'blur(8px)',
+                            background: "rgba(0,0,0,.4)"
+                        },
+                        content: {
+                            maxWidth: "51rem",
+                            margin: "auto",
+                            background: "rgba(31, 41, 55)",
+                            border: '0px'
+                        }
+                    }}
+                >
+
+                </Modal>
+                <section className="w-1/6 min-h-screen h-full bg-gray-800 overflow-auto md:block hidden text-gray-500 ">
+                    <img onClick={openModalToEditProfile} src={firebase.auth().currentUser.photoURL} alt="" className="w-16 h-16 lg:w-24 lg:h-24 md:mt-14 rounded-full mx-auto my-5 object-cover cursor-pointer" />
                     <button className={ `focus:outline-none transition-all hover:bg-gray-900 w-full flex items-center justify-center lg:py-0 py-2 ${actualPage == page.home ? "bg-gray-900 text-gray-200": ""}`} onClick={() => setActualPage(page.home)}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -73,9 +91,11 @@ export const AdminHomePage = () => {
                         </svg>
                         <h1 className="p-3 lg:block hidden">Mensajes</h1>
                     </button>
-                    <button className={`focus:outline-none transition-all hover:bg-gray-900 w-full flex items-center justify-center lg:py-0 py-2 ${actualPage == page.profile ? "bg-gray-900 text-gray-200": ""}`} onClick={() => setActualPage(page.profile)}>
+                    <button 
+                        className={`focus:outline-none transition-all hover:bg-gray-900 w-full flex items-center justify-center lg:py-0 py-2 ${actualPage == page.profile ? "bg-gray-900 text-gray-200": ""}`} 
+                        onClick={openModalToEditProfile}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                         </svg>
                         <h1 className="p-3 lg:block hidden">Profile</h1>
                     </button>
@@ -85,7 +105,7 @@ export const AdminHomePage = () => {
                 </section>
                 {
                     actualPage == page.home ?
-                    <Dashboard /> : actualPage == page.messages ? <Messages /> : <ProfileAdmin />
+                    <Dashboard /> : <Messages />
                 }
             </div>
             <div className="fixed bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur bottom-0 w-full md:hidden flex justify-evenly items-center py-2 text-gray-500">

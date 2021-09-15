@@ -22,7 +22,7 @@ const Blog = () => {
         db.collection("posts").orderBy("date", "desc").onSnapshot(async (querySnapshot) => {
             const posts = [];
             querySnapshot.docs.forEach((doc) => {
-                const { title, subtitle, date, category, authorID, authorName, authorPhoto } = doc.data();
+                const { title, subtitle, date, category, authorID, authorName, authorPhoto, imagen } = doc.data();
                 posts.push({
                     id: doc.id,
                     title,
@@ -31,7 +31,8 @@ const Blog = () => {
                     category,
                     authorID,
                     authorName,
-                    authorPhoto
+                    authorPhoto,
+                    imagen
                 });
             });
             await delay(500);
@@ -72,7 +73,7 @@ const Blog = () => {
                                 {
                                     posts.length > 0 ?
                                         posts.map(post => (
-                                            post ? <PostElement authorPhoto={post.authorPhoto} authorID={post.authorID} authorName={post.authorName} id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} /> : <h1>cargando....</h1>
+                                            post ? <PostElement imagen={post.imagen} authorPhoto={post.authorPhoto} authorID={post.authorID} authorName={post.authorName} id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} /> : <h1>cargando....</h1>
                                         )
                                         ) : (
                                             <>

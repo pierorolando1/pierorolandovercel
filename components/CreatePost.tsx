@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { delay, fileUpload, PostToBlog, removeSpecials, stateRedux } from "./helpers";
 import BarLoader from 'react-spinners/BarLoader'
 import ClockLoader from 'react-spinners/ClockLoader'
-import Swal2 from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import { firebase, db } from '../firebase.config'
 import { useSelector } from 'react-redux';
 import router from 'next/router';
+import Swal2 from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const MySwal = withReactContent(Swal2)
 
