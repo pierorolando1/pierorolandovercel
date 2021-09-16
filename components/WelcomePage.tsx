@@ -11,8 +11,17 @@ export const WelcomePage = () => {
 
 export const Header = () => {
     return (
-        <header className="bg-gray-800 w-full h-screen flex justify-center items-center">
-            <img src="https://devmagazine.co/wp-content/uploads/2018/07/Qu%C3%A9-puedo-hacer-para-iniciar-mi-camino-como-programador.png" className="w-full h-full absolute object-cover z-0 opacity-70 select-none" />
+        <header className="bg-gray-900 w-full h-screen flex justify-center items-center">
+            <div
+                className="w-full h-full absolute object-cover z-0 select-none opacity-30"
+                style={{
+                    background: "url(https://www.upnech.edu.mx/wp-content/uploads/2016/11/37821466-wallpaper-computer-1024x576.jpg)",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            ></div>
+            {/* <img src="https://www.upnech.edu.mx/wp-content/uploads/2016/11/37821466-wallpaper-computer-1024x576.jpg" className="w-full h-full absolute object-cover z-0 opacity-70 select-none" /> */}
 
             <div className="flex flex-col w-full h-full">
                 <div className="flex items-center justify-center" style={{ flex: 2 }}>

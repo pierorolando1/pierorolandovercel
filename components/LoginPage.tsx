@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { firebase } from '../firebase.config'
 import { login } from '../redux/auth/actions'
-import { authState } from './helpers'
+import { authState } from '../helpers'
 import { Redirect } from './Redirect'
 
 

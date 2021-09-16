@@ -3,7 +3,7 @@ import { firebase } from '../../firebase.config'
 
 import Swal2 from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { fileUpload } from '../helpers'
+import { fileUpload } from '../../helpers'
 
 const MySwal = withReactContent(Swal2)
 

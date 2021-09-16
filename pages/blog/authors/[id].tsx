@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { Author, getAllAuthorsIds, getAuthor } from '../../../components/helpers'
+import { Author, getAllAuthorsIds, getAuthor } from '../../../helpers'
 import { NormalPage } from '../../../components/NormalPage'
 import PostElement from '../../../components/PostElement'
 import PostElementLoading from '../../../components/PostElementLoading'
@@ -40,7 +40,7 @@ const AuthorPage = ({authorData}) => {
         db.collection("posts").where("authorID", "==", author.id).onSnapshot((querySnapshot) => {
             const posts = [];
             querySnapshot.docs.forEach((doc) => {
-                const { title, subtitle, date, category, authorID, authorName, authorPhoto } = doc.data();
+                const { title, subtitle, date, category, authorID, authorName, authorPhoto, imagen } = doc.data();
                 posts.push({
                     id: doc.id,
                     title,
@@ -49,7 +49,8 @@ const AuthorPage = ({authorData}) => {
                     category,
                     authorID,
                     authorName,
-                    authorPhoto
+                    authorPhoto,
+                    imagen
                 });
             });
             setPosts(posts);
@@ -65,7 +66,7 @@ const AuthorPage = ({authorData}) => {
                     {
                         posts.length > 0 ?
                         posts.map(post => (
-                            post ? <PostElement authorPhoto={post.authorPhoto} authorID={post.authorID} authorName={post.authorName} id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} /> : <h1>cargando....</h1>
+                            post ? <PostElement imagen={post.imagen} authorPhoto={post.authorPhoto} authorID={post.authorID} authorName={post.authorName} id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} /> : <h1>cargando....</h1>
                         )
                         ) : (
                             <>

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { db } from '../firebase.config'
+import { db } from './firebase.config'
 
 export interface Post {
     id: string,

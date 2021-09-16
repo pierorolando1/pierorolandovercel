@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { AdminHomePage } from '../../components/AdminHome'
 import { ProtectedComponent } from '../../components/Auth/ProtectedComponent'
 import { GeneralPage } from '../../components/GeneralPage'
-import { authState } from '../../components/helpers'
+import { authState } from '../../helpers'
 import { firebase } from '../../firebase.config'
 import { login } from '../../redux/auth/actions'
 
