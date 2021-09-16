@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { db } from './firebase.config'
+import { db, firebase } from './firebase.config'
 
 export interface Post {
     id: string,
@@ -16,6 +16,8 @@ export interface Author {
     name: string,
     id: string,
     photo: string,
+    phone?:any,
+    email:string
 }
 
 
@@ -67,7 +69,9 @@ export const getAuthor = async (id: string) => {
     return {
         id: data.id,
         name: author.name,
-        photo: author.photo
+        photo: author.photo,
+        email: author.email,
+        phone: author.phone
     }
 }
 
@@ -186,7 +190,56 @@ export const ContainerEditor = styled.div`
     }
 `
 
+export const updatePhotoInAll = async ({username, photoURL}) => {
+    await firebase.auth().currentUser.updateProfile({
+        photoURL
+    })
+    await db.collection("authors").doc(username).update({
+        photo: photoURL
+    })
+    const { docs } = await db.collection("posts").where("authorID", "==", username).get()
+    docs.forEach(async doc => {
+        await doc.ref.update({
+            authorPhoto: photoURL
+        })
+    })
+}
 
-export const openModalToEditProfile = () => {
+export const updateNameInAll = async ({username, newName}) => {
+    await firebase.auth().currentUser.updateProfile({
+        displayName: newName
+    })
+    await db.collection("authors").doc(username).update({
+        name: newName
+    })
+    const { docs } = await db.collection("posts").where("authorID", "==", username).get()
+    docs.forEach(async doc => {
+        await doc.ref.update({
+            authorName: newName
+        })
+    })
+}
+
+export const updateEmailInAll = async ({username, newEmail}) => {
+    await firebase.auth().currentUser.updateProfile({
+        displayName: newEmail
+    })
+    await db.collection("authors").doc(username).update({
+        email: newEmail
+    })
     
+}
+
+export const updatePhoneInAll = async ({username,newPhone}) => {
+    try {
+        //await firebase.auth().currentUser.updatePhoneNumber({
+        //    
+        //})
+        await db.collection("authors").doc(username).update({
+            phone: newPhone
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
 }

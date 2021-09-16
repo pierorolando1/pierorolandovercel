@@ -7,7 +7,7 @@ import { EditPostPlaceholder } from '../../../../components/Admin Panel/EditPost
 import { db } from '../../../../firebase.config'
 import { useState } from 'react'
 import { Redirect } from '../../../../components/Redirect'
-import { Post } from '../../../../helpers'
+import { fileUpload, Post } from '../../../../helpers'
 import { AdminNavBar } from '../../../../components/Navbar/AdminNavBar'
 
 const EditorJs = dynamic(() => import("../../../../components/EditorJs"), { ssr: false })
@@ -16,6 +16,7 @@ const PostEdit = () => {
 
     const [postLoading, setPostLoading] = useState(true)
     const [post, setPost] = useState<Post>(null)
+    const [imagen, setImagen] = useState(null)
     useEffect(() => {
         const main = async () => {
             const postId = window.location.pathname.split("/admin/post/")[1]
@@ -30,6 +31,18 @@ const PostEdit = () => {
         main()
     }, [])
 
+    const photoChange = async (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const imagenurl = await fileUpload(file)
+            const postId = window.location.pathname.split("/admin/post/")[1]
+            await db.collection("posts").doc(postId).update({
+                imagen:imagenurl
+            })
+            setImagen(imagen)
+        }
+    }
+
     return (
         !postLoading ?
             <GeneralPage>
@@ -42,7 +55,14 @@ const PostEdit = () => {
                                     <div className="max-w-7xl mx-auto w-full h-full">
                                     </div>
                                     <div className="max-w-7xl mx-auto w-full">
-                                        <button className="bg-blue-700 text-gray-50 p-3 px-4 rounded font-black">Change photo</button>
+                                        <button
+                                            onClick={() => {
+                                                const temp:any = document.querySelector("#imageselector")
+                                                console.log(temp)
+                                                temp.click()
+                                            }}
+                                            className="bg-blue-700 text-gray-50 p-3 px-4 rounded font-black">Change photo</button>
+                                        <input type="file" accept="image/*" id="imageselector" className="hidden" onChange={photoChange} />
                                     </div>
                                 </div>
                                 <div className="w-full h-full" style={{ background: `url('${post.imagen}')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>

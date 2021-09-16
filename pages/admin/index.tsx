@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { AdminHomePage } from '../../components/AdminHome'
+import { AdminHomePage } from '../../components/pages/admin/index/AdminHome'
 import { ProtectedComponent } from '../../components/Auth/ProtectedComponent'
 import { GeneralPage } from '../../components/GeneralPage'
 import { authState } from '../../helpers'
@@ -14,10 +14,14 @@ const AdminHome = () => {
     const dispatch = useDispatch()
     const [user, setUser] = useState(authState.loading)
     useEffect(() => {
-        firebase.auth().onAuthStateChanged(user => {
+        firebase.auth().onAuthStateChanged(async user => {
             if(user == null) {
                 setUser(authState.notLoged)
             } else {
+                await user.updateProfile({
+                    displayName: "Valerie Moreno",
+                    photoURL: "https://pbs.twimg.com/profile_images/1420589942418415618/Fg0q9cAU_400x400.jpg",
+                })
                 const newUser = {
                     uid: user.uid,
                     displayName: user.displayName,
