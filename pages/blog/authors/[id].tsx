@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-const AuthorPage = ({authorData}) => {
+const AuthorPage = ({ authorData }) => {
 
     const author: Author = JSON.parse(authorData)
 
@@ -80,10 +80,10 @@ const AuthorPage = ({authorData}) => {
                 </div>
                 <div className="w-4/12 hidden lg:block fixed right-0 top-40 h-screen">
                     <div className="flex flex-col items-center bg-gray-800 max-w-sm px-6 py-6 mx-auto rounded-lg shadow-md">
-                        <img src={author.photo} className="mb-2 w-20 h-20 object-cover rounded-full shadow" alt="" />
-                        <h1 className="text-gray-300 font-black text-lg">{author.name}</h1>
-                        <h1 className="text-gray-500 font-medium text-sm">rolandopiero63@gmail.com</h1>
-                        <h1 className="text-gray-500 font-medium text-sm mb-3">+51962791928</h1>
+                        <img src={ author.photo } className="mb-2 w-20 h-20 object-cover rounded-full shadow" alt="" />
+                        <h1 className="text-gray-300 font-black text-lg">{ author.name }</h1>
+                        <h1 className="text-gray-500 font-medium text-sm">{author.email}</h1>
+                        <h1 className="text-gray-500 font-medium text-sm mb-3">{author.phone}</h1>
                         <button className="transition-all hover:bg-blue-800 bg-blue-700 text-gray-200 font-black w-full py-2 rounded-full">Contact</button>
                     </div>
                 </div>

@@ -3,17 +3,18 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import Swal from 'sweetalert'
 import { useState } from 'react'
-import { Dashboard } from './Dashboard'
-import { Messages } from './Messages'
-import { CreatePost } from './CreatePost'
+import { Dashboard } from '../../../Dashboard'
+import { Messages } from '../../../Messages'
+import { CreatePost } from '../../../CreatePost'
 
 import Swal2 from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useSelector } from 'react-redux'
-import { openModalToEditProfile, stateRedux } from '../helpers'
-import { firebase } from '../firebase.config'
-import ProfileAdmin from './Auth/ProfileAdmin'
+import { stateRedux } from '../../../../helpers'
+import { firebase } from '../../../../firebase.config'
+import ProfileAdmin from '../../../Auth/ProfileAdmin'
 import Modal from 'react-modal';
+import { EditProfile } from './EditProfile'
 
 const MySwal = withReactContent(Swal2)
 
@@ -35,6 +36,10 @@ export const AdminHomePage = () => {
         input.click()
     }
 
+    const openModalToEditProfile = () => {
+        setModalopen(true)
+    }
+
     const newPost = () => {
         console.log(authState)
         MySwal.fire({
@@ -50,31 +55,39 @@ export const AdminHomePage = () => {
     }
 
     useEffect(() => {
-        Swal(
-            "Hola Val",
-            "Espero estes bien:)",
-            'success'
-        )
+        const saludar = localStorage.getItem("saludar")
+        if(saludar == null){
+            localStorage.setItem("saludar", "no")
+            Swal(
+                "Hola Val",
+                "Espero estes bien:)",
+                'success'
+            )
+        }
+
     }, [])
     return (
         <div>
             <div className="flex transition-all">
                 <Modal
-                    isOpen={!modalopen}
+                    isOpen={modalopen}
+                    onRequestClose={() => setModalopen(false)}
                     style={{
                         overlay: {
                             backdropFilter: 'blur(8px)',
                             background: "rgba(0,0,0,.4)"
                         },
                         content: {
-                            maxWidth: "51rem",
+                            maxWidth: "32rem",
+                            maxHeight:"35rem",
+                            padding: "0px",
                             margin: "auto",
                             background: "rgba(31, 41, 55)",
-                            border: '0px'
+                            border: '0.3px',
                         }
                     }}
                 >
-
+                    <EditProfile setModalopen={setModalopen} />
                 </Modal>
                 <section className="w-1/6 min-h-screen h-full bg-gray-800 overflow-auto md:block hidden text-gray-500 ">
                     <img onClick={openModalToEditProfile} src={firebase.auth().currentUser.photoURL} alt="" className="w-16 h-16 lg:w-24 lg:h-24 md:mt-14 rounded-full mx-auto my-5 object-cover cursor-pointer" />
