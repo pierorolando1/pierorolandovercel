@@ -90,7 +90,7 @@ export const AdminHomePage = () => {
                     <EditProfile setModalopen={setModalopen} />
                 </Modal>
                 <section className="w-1/6 min-h-screen h-full bg-gray-800 overflow-auto md:block hidden text-gray-500 ">
-                    <img onClick={openModalToEditProfile} src={firebase.auth().currentUser.photoURL} alt="" className="w-16 h-16 lg:w-24 lg:h-24 md:mt-14 rounded-full mx-auto my-5 object-cover cursor-pointer" />
+                    <img onClick={openModalToEditProfile} src={ firebase.auth().currentUser.photoURL } alt="" className="w-16 h-16 lg:w-24 lg:h-24 md:mt-14 rounded-full mx-auto my-5 object-cover cursor-pointer" />
                     <button className={ `focus:outline-none transition-all hover:bg-gray-900 w-full flex items-center justify-center lg:py-0 py-2 ${actualPage == page.home ? "bg-gray-900 text-gray-200": ""}`} onClick={() => setActualPage(page.home)}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
