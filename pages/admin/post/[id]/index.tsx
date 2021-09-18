@@ -37,9 +37,11 @@ const PostEdit = () => {
             const imagenurl = await fileUpload(file)
             const postId = window.location.pathname.split("/admin/post/")[1]
             await db.collection("posts").doc(postId).update({
-                imagen:imagenurl
+                imagen: imagenurl
             })
             setImagen(imagen)
+
+            router.reload()
         }
     }
 
@@ -65,7 +67,7 @@ const PostEdit = () => {
                                         <input type="file" accept="image/*" id="imageselector" className="hidden" onChange={photoChange} />
                                     </div>
                                 </div>
-                                <div className="w-full h-full" style={{ background: `url('${post.imagen}')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                                <div className="w-full h-full" style={{ background: `url('${imagen == null ? post.imagen : imagen}')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                                 </div>
                             </div>
                             <div className="flex mx-auto max-w-7xl justify-between px-1 py-5 pb-3">

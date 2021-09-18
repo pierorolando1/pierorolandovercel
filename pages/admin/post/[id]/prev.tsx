@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Quill from 'quill'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
+import BarLoader from 'react-spinners/BarLoader'
 import { delay } from '../../../../helpers'
 
 const EditorJsView = dynamic(() => import("../../../../components/EditorJsView"),{ssr:false})
@@ -18,7 +19,9 @@ const Previsualization = () => {
     }, [])
 
     return (
-        loading ? <h1>hola</h1>
+        loading ? <div className="bg-gray-900 h-screen">
+                <BarLoader color="#1d4ed8" />
+            </div>
         :
         <EditorJsView />
     )
