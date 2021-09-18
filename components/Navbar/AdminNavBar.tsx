@@ -29,10 +29,10 @@ export const AdminNavBar = () => {
         }*/
     `
     return (
-        <NavInternal id="navbaredit" className={`transition-all fixed z-50 w-full py-14 sm:px-0 px-4 navinternal ${activeNav ? "navbaradminactive" : ""}`}>
+        <NavInternal id="navbaredit" className={`transition-all fixed z-50 w-full sm:py-14 py-8 sm:px-0 px-5 navinternal ${activeNav ? "navbaradminactive" : ""}`}>
             <div className="max-w-7xl mx-auto">
                 <button className="transition-all" onClick={() => router.push("/admin")}>
-                    <i className="text-gray-100 hover:text-white text-3xl fal fa-angle-left"></i>
+                    <i className="text-gray-100 hover:text-white sm:text-3xl text-2xl fal fa-angle-left"></i>
                 </button>
             </div>
         </NavInternal>
