@@ -51,7 +51,7 @@ export default function EditorJs({ post }) {
                 {/* <button onClick={() => console.log(JSON.stringify( editor.root.innerHTML ))} className='bg-blue-700 rounded text-gray-50 font-extrabold p-2 px-3'>Guardar</button> */}
                 {
                     saving ? <ClockLoader size="30" color="#1d4ed8" /> :
-                    <button onClick={ publishAndSave } className='transition-all px-4 bg-gradient-to-r hover:shadow-xl from-blue-600 to-indigo-700 text-gray-50 py-2 rounded ml-1 font-bold'>Publicar y guardar</button>
+                    <button onClick={ publishAndSave } className='transition-all px-4 bg-gradient-to-r hover:shadow-xl from-blue-600 to-indigo-700 text-gray-50 py-2 rounded ml-1 font-bold sm:text-base text-sm'>Publicar y guardar</button>
                 }
             </div>
         </>
