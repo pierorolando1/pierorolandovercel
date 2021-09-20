@@ -51,7 +51,7 @@ export const CreatePost = ({authState}) => {
 
         try {
             setLoadingPostUpload(true)
-            await db.collection("posts").doc(urlId).set(newPost)
+            await db.collection("posts").doc(`${urlId}`).set(newPost)
             await delay(1000)
             setLoadingPostUpload(false)
             MySwal.close()
