@@ -57,6 +57,7 @@ export const CreatePost = ({authState}) => {
             MySwal.close()
             router.push(`/admin/post/${urlId}`)
         } catch (error) {
+            console.log(error)
             MySwal.fire({
                 title: "Algo salio mal"
             })
