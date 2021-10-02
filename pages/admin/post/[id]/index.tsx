@@ -27,6 +27,8 @@ const PostEdit = () => {
                 id: postF.id,
             })
             setPostLoading(false)
+            console.log(postF.data().title)
+            document.title = `${postF.data().title}`
         }
         main()
     }, [])

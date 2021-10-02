@@ -34,8 +34,8 @@ export const CreatePost = ({authState}) => {
     }
     
     const handleClick = async () => {
-        removeSpecials(title)
-        const urlId = removeSpecials(title).trim().toLowerCase().replaceAll(" ","-")
+        //const urlId = removeSpecials(title).trim().toLowerCase().replaceAll(" ","-")
+        const urlId = title
         const newPost: PostToBlog = {
             title,
             subtitle,
@@ -57,9 +57,11 @@ export const CreatePost = ({authState}) => {
             MySwal.close()
             router.push(`/admin/post/${urlId}`)
         } catch (error) {
-            console.log(error)
+            console.log(error.toString())
+            
             MySwal.fire({
-                title: "Algo salio mal"
+                title: "Algo salió mal",
+                text: error
             })
         }
     }

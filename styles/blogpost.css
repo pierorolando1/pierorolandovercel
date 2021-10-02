@@ -1,0 +1,49 @@
+#container {
+    height: 100%;
+    width: 100%;
+    color: rgb(156,163,175);
+}
+#container h1, #container h2, #container h3 {
+        color: rgb(209,213,219);
+    }
+
+    #container h2, #container h3 {
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+    }
+    #container h1 {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+    
+    @media (min-width: 768px){
+        #container h1 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        #container h2 {
+            font-size: 1.35rem;
+            line-height: 1.85rem;
+        }
+        #container h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+    }
+
+    #container p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: rgba(156,163,175,1);
+    }
+    
+    #container strong {
+        font-weight: 700;
+    }
+
+    #container .ql-clipboard {
+        display: none;
+    }

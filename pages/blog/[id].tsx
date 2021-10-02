@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { getAllPostIds, getPost, Post } from '../../helpers'
 import { DefaultSeo } from 'next-seo'
 import styled from 'styled-components'
+//import '../../styles/blogpost.css'
 
 export async function getStaticPaths() {
     const data = await getAllPostIds()
@@ -35,6 +36,7 @@ export async function getStaticProps({ params }) {
 const Div = styled.div`
     height: 100%;
     width: 100%;
+    color: rgba(156,163,175,1);
 
     h1,h2,h3 {
         color: rgba(209,213,219,1);
