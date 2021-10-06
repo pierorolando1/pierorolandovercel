@@ -20,6 +20,7 @@ export const CreatePost = ({authState}) => {
     const [subtitle, setSubtitle] = useState("")
     const [content, setcontent] = useState("")
     const [imagen, setImagen] = useState("")
+    const [url, setUrl] = useState("")
     
 
     const handleFileChange = async (e: any) => {
@@ -34,8 +35,8 @@ export const CreatePost = ({authState}) => {
     }
     
     const handleClick = async () => {
-        //const urlId = removeSpecials(title).trim().toLowerCase().replaceAll(" ","-")
-        const urlId = title
+        //const urlId = removeSpecials(title).trim().toLowerCase().replaceAll(" ","-") //TODO:
+        //const urlId = title
         const newPost: PostToBlog = {
             title,
             subtitle,
@@ -51,11 +52,11 @@ export const CreatePost = ({authState}) => {
 
         try {
             setLoadingPostUpload(true)
-            await db.collection("posts").doc(`${urlId}`).set(newPost)
+            await db.collection("posts").doc(`${url}`).set(newPost)
             await delay(1000)
             setLoadingPostUpload(false)
             MySwal.close()
-            router.push(`/admin/post/${urlId}`)
+            router.push(`/admin/post/${url}`)
         } catch (error) {
             console.log(error.toString())
             
@@ -72,6 +73,10 @@ export const CreatePost = ({authState}) => {
             <input required value={title} onChange={e => setTitle(e.target.value)} className="w-full text-3xl font-black bg-transparent focus:outline-none focus:border-transparent text-gray-50" type="text" placeholder="Titulo" />
             <input required value={subtitle} onChange={e => setSubtitle(e.target.value)} className="w-full text-xl bg-transparent font-bold text-gray-100" type="text" placeholder="Descripción" />
             <textarea value={content} onChange={e => setcontent(e.target.value)} className="w-full bg-transparent" placeholder="Contenido (opcional)"></textarea>
+            <div className="flex text-sm">
+                <h1>/blog/</h1>
+                <input type="text" className="p-0 bg-transparent" value={url} onChange={e => setUrl(e.target.value)} />
+            </div>
             {
                 loadingImage ? <BarLoader color="#1d4ed8" /> :
                 <label htmlFor="upload-photo" className="transition-all bg-gradient-to-r opacity-80 from-blue-700 to-indigo-700 hover:opacity-100 max-w-xs cursor-pointer select-none py-2 rounded-3xl shadow hover:shadow-xl text-gray-50 font-bold text-base my-4">{imagen.length > 0?"Cambiar imagen":"Subir imagen"}</label>
