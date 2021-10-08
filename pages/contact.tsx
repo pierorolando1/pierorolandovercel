@@ -20,14 +20,14 @@ export const ContactForm = () => {
     const [mensaje, setMensaje] = useState('')
 
     return (
-        <section id="contact" className="relative w-full min-h-screen bg-black text-gray-500 flex md:pt-0 pt-40" >
+        <section className="relative w-full min-h-screen bg-primary-900 text-gray-500 flex md:pt-0 pt-40" >
             {/*<div className="fixed top-1/2 left-1/2 shadow-2xl transform -translate-x-1/2 -translate-y-1/2 bg-blue-800 h-80 w-full z-0" style={{ background: "url('https://cdn.tz.nl/wp-content/uploads/2018/09/shutterstock_680075008.jpg')", backgroundRepeat: 'no-repeat', background  }}></div>*/}
 
             {/* <!-- wrapper --> */}
             <div className="relative p-5 lg:px-20 flex flex-col md:flex-row items-center justify-center flex-1">
                 {/* <!-- Social Media --> */}
                 <div className="w-full md:w-1/2 p-5 md:px-0 mx-5">
-                    <div className="shadow-2xl w-full lg:w-3/4 h-full p-5 pt-8 rounded-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}} >
+                    <div className="shadow-lg w-full lg:w-3/4 h-full p-5 pt-8 rounded-lg mx-auto" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}} >
                         <h3 className="text-2xl font-semibold mb-5 hover:text-blue-500">My Social Media</h3>
                         {/* <!-- list --> */}
                         <div className="flex flex-col gap-3">
@@ -60,7 +60,7 @@ export const ContactForm = () => {
                 </div>
 
                 {/* <!-- Contact Me --> */}
-                <form action="https://formsubmit.co/rolandopiero63@gmail.com" className="w-full md:w-1/2 p-7 pt-9 rounded-lg shadow-2xl" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}}>
+                <form action="https://formsubmit.co/rolandopiero63@gmail.com" className="w-full md:w-1/2 p-7 pt-9 rounded-  lg shadow-lg" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}}>
                     <h2 className="text-2xl pb-3 font-semibold">Send Message</h2>
                     <div>
                         <div className="flex flex-col mb-3">
@@ -81,7 +81,7 @@ export const ContactForm = () => {
                         </div>
                     </div>
                     <div className="w-full pt-3">
-                        <button type="submit" className="rounded-3xl shadow-2xl w-full bg-blue-900 px-4 py-2 transition duration-50 focus:outline-none font-semibold hover:bg-blue-700 hover:text-white text-xl cursor-pointer">Send</button>
+                        <button type="submit" className="rounded-3xl shadow-2xl w-full bg-accent px-4 py-2 transition duration-50 focus:outline-none font-semibold bg-opacity-60 hover:bg-opacity-90 hover:text-white text-xl cursor-pointer">Send</button>
                     </div>
                 </form>
             </div>

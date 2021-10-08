@@ -42,7 +42,7 @@ a {
 
 .navbarcoloractive{
   --tw-bg-opacity: 0.65;
-  background-color: rgba(24, 32.5, 47, var(--tw-bg-opacity));
+  background-color: #151a21f5;/*rgba(24, 32.5, 47, var(--tw-bg-opacity));*/
   transition: all;
   backdrop-filter: blur(10px);
 }
@@ -222,3 +222,48 @@ code {
   color: rgb(191, 199, 213);
   background-color: rgb(41, 45, 62);
 }
+
+.bg-gray-dark-1 {
+  background-color: #161923
+}
+.bg-gray-light-1 {
+  background-color: #282d3f
+}
+
+
+.bg-gray-dark-2 {
+  background-color: #16161e
+}
+.bg-gray-light-2 {
+  background-color: #1b1b27
+}
+
+
+
+#nprogress {
+  position: relative;
+  z-index: 9999999;
+}
+
+#nprogress .bar {
+  background: #ff5367 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #ff5367,
+    0 0 5px #ff5367 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #ff5367 !important;
+  border-left-color: #ff5367 !important;
+}
+
+/* #nprogress .bar {
+  background: #ff5367 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #ff5367;
+  border-left-color: #ff5367;
+} */

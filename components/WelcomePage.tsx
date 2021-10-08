@@ -11,7 +11,7 @@ export const WelcomePage = () => {
 
 export const Header = () => {
     return (
-        <header className="bg-gray-900 w-full h-screen flex justify-center items-center">
+        <header className="bg-primary-900 w-full h-screen flex justify-center items-center">
             <div
                 className="w-full h-full absolute object-cover z-0 select-none opacity-30"
                 style={{
@@ -42,7 +42,7 @@ export const Header = () => {
 
 export const Main = () => {
     return (
-        <main className="w-full flex items-center justify-center bggradient" id="main" style={{ height: '70vh', }}>
+        <main className="w-full flex items-center justify-center bg-gray-dark-2" id="main" style={{ height: '70vh', }}>
             <div className="max-w-7xl h-full text-gray-400" style={{ flex: 1 }} >
                 <h1 className=" mt-32 uppercase font-normal text-center">Desarrollo mobil y web</h1>
                 <h1 className="text-3xl text-center text-gray-300">SOY PIERO ROLANDO,<br />DESARROLLADOR FULL STACK</h1>

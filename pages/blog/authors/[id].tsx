@@ -60,8 +60,8 @@ const AuthorPage = ({ authorData }) => {
 
     return (
         <NormalPage title={author.name} footer={false}>
-            <div className="w-full min-h-screen bg-gray-900">
-                <div className="bg-gray-900 w-full h-full py-40 px-6 container mx-auto">
+            <div className="w-full min-h-screen bg-primary-900">
+                <div className="bg-primary-900 w-full h-full py-40 px-6 container mx-auto">
                     <h1 className="text-gray-100 font-semibold text-xl">{author.name}'s <span>Posts</span></h1>
                     {
                         posts.length > 0 ?

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function Navbar() {
 
-  const [proyectsnav, setProyectsnav] = useState(true)
   const [mobileNav, setMobileNav] = useState(false)
 
   useEffect(() => {
@@ -23,17 +23,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center transition-all py-6 md:justify-start md:space-x-10" id="navbarpaddingactive">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Workflow</span>
-              <img src="/favicon.png" className="w-6" />
-
-            </a>
+            <Link href="/">
+              <a>
+                <span className="sr-only">Workflow</span>
+                <img src="/favicon.png" className="w-6" />
+              </a>
+            </Link>
           </div>
           <div className="cursor-pointer -mr-2 -my-2 md:hidden" onClick={() => { setMobileNav(!mobileNav) }} >
             <a onClick={() => { setMobileNav(!mobileNav) }} className="cursor-pointer rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
               <span className="sr-only">Open menu</span>
-              <svg className="h-6 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </a>
           </div>
@@ -53,7 +54,11 @@ export default function Navbar() {
             <Link href="/blog"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a></Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Link href="/contact"><a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 opacity-75 hover:opacity-95">Contactame</a></Link>
+            <Link href="/contact">
+              <a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-accent opacity-75 hover:opacity-90 transition-all">
+                Contact me
+              </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -68,7 +73,11 @@ export default function Navbar() {
       From: "opacity-100 scale-100"
       To: "opacity-0 scale-95"
   --> */}
-      <SubMenuMobile active={mobileNav} setMobileNav={setMobileNav} />
+      {
+        mobileNav &&
+        <SubMenuMobile active={true} setMobileNav={setMobileNav} />
+        
+      }
     </div>
   )
 }
@@ -79,15 +88,17 @@ export default function Navbar() {
 
 export const SubMenuMobile = ({ active, setMobileNav }) => {
   return (
-    <div className={`${active ? '' : 'hidden'} absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`} >
-      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-700" style={{ backgroundColor: 'rgba(31, 41, 55, 0.9)' }}>
+    <motion.div initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }} transition={{ duration: 0.07 }} className={`${active ? '' : 'hidden'} absolute top-0 inset-x-0 transition transform origin-top-right md:hidden min-h-screen bg-primary-900 bg-opacity-60`} >
+      <div className="rounded-b-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-700 bg-primary-800">
         <div className="pt-5 pb-6 px-5">
           <div className="flex items-center justify-between">
             <div>
               <Link href="/"><h1 className="arciform text-gray-100">pr</h1></Link>
             </div>
             <div className="-mr-2">
-              <button onClick={() => { setMobileNav(!active) }} type="button" className="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+              <button onClick={() => { setMobileNav(!active) }} type="button" className="bg-primary-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
                 <span className="sr-only">Close menu</span>
 
                 <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -98,102 +109,37 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
           </div>
           <div className="mt-6">
             <nav className="grid gap-y-8">
-              <Link href="/proyects/react"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
 
                 <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
-                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> React </span>
+                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Home</span>
               </a></Link>
 
-              <Link href="/proyects/flutter"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
 
                 <img src="https://miro.medium.com/max/1000/1*ilC2Aqp5sZd1wi0CopD1Hw.png" className="w-6" />
-                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> Flutter </span>
+                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Who i am?</span>
               </a></Link>
 
-              <Link href="/proyects/reactnative"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/proyectos"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
                 <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
-                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> React Native </span>
+                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Proyects</span>
               </a></Link>
 
-              <Link href="/proyects/express"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/blog"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
                 <img src="https://www.mattepuffo.com/IMMAGINI_ARTICOLI/nodejs.jpeg" className="w-6" />
-                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> Node/express </span>
-              </a></Link>
-
-              <Link href="/fullstack"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
-                <svg className="flex-shrink-0 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300"> Ver todos </span>
+                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Blog</span>
               </a></Link>
             </nav>
           </div>
         </div>
         <div className="py-6 px-5 space-y-6">
-          <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-            <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Inicio</a></Link>
-            <Link href="/#main"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">¿Quien soy?</a></Link>
-            <Link href="/"><a href="#" className="text-base font-medium text-gray-400 hover:text-gray-200">Proyectos</a></Link>
-            <Link href="/blog"><a href="/blog" className="text-base font-medium text-gray-400 hover:text-gray-200"> Blog </a></Link>
-          </div>
           <div>
-            <a href="#" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contactame</a>
+            <a href="#" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-accent hover:bg-accent-hover">Contact me</a>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
-
-export const SubMenu = ({ active, setProyectsnav }) => {
-  return (
-    <div onMouseLeave={() => { setProyectsnav(true) }} className={`${active ? 'hidden' : ''} absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}>
-      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-        <div className="relative grid gap-6 px-5 py-6 sm:gap-8 sm:p-8" style={{ backgroundColor: 'rgba(31, 41, 55, 0.9)', backdropFilter: 'blur(100px)' }}>
-          <Link href="/proyects/react"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
-            <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
-            <div className="ml-4">
-              <p className="text-base font-medium text-gray-300">React</p>
-              <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Mira algunos proyectos que realize con la libreria de Facebook</p>
-            </div>
-          </a></Link>
-
-          <Link href="/proyects/flutter"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
-            <img src="https://miro.medium.com/max/1000/1*ilC2Aqp5sZd1wi0CopD1Hw.png" className="w-6" />
-            <div className="ml-4">
-              <p className="text-base font-medium text-gray-300">Flutter</p>
-              <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Clickeame para ver algunos proyectos que he realizado con el SDK de Google</p>
-            </div>
-          </a></Link>
-
-          <Link href="/proyects/reactnative"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
-            <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
-            <div className="ml-4">
-              <p className="text-base font-medium text-gray-300">React Native</p>
-              <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Your customers&#039; data will be safe and secure.</p>
-            </div>
-          </a></Link>
-
-          <Link href="/proyects/express"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
-            <img src="https://www.mattepuffo.com/IMMAGINI_ARTICOLI/nodejs.jpeg" className="w-6" />
-            <div className="ml-4">
-              <p className="text-base font-medium text-gray-300">Node/express</p>
-              <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Connect with third-party tools that you&#039;re already using.</p>
-            </div>
-          </a></Link>
-
-          <Link href="/proyects/"><a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-700">
-            <svg className="flex-shrink-0 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-            <div className="ml-4">
-              <p className="text-base font-medium text-gray-300">Ver todos</p>
-              <p className="mt-1 text-sm text-gray-500 hover:text-gray-400">Mira todos mis proyectos, desde contribuciones hasta caprichos raros</p>
-            </div>
-          </a></Link>
-        </div>
-      </div>
-    </div>
-  )
-}

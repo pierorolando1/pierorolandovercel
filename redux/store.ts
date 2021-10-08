@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { authReducer } from './auth/reducer';
+import { modalReducer } from './modalloading/reducer';
 
 var composeEnhancers = compose;
 
@@ -11,6 +12,7 @@ if (typeof window !== "undefined") {
 
 const reducers = combineReducers({
     auth: authReducer,
+    modal: modalReducer
 });
 
 

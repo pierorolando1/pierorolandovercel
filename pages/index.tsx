@@ -14,7 +14,7 @@ export default function Home() {
       title="Inicio | Piero Rolando"
       description="Portafolio and personal blog of Piero Rolando"
     />
-      <NormalPage  title="Inicio">
+      <NormalPage title="Inicio" footer={false}>
         <WelcomePage />
       </NormalPage>
 

@@ -10,13 +10,13 @@ import styled from 'styled-components'
 
 export async function getStaticPaths() {
     const data = await getAllPostIds()
-    
+
     const paths = data.map(post => {
         return {
             params: { id: post.id.toString() }
         }
     })
-    
+
     return {
         paths,
         fallback: false
@@ -83,8 +83,8 @@ const Div = styled.div`
     }
 `
 
-const PostPage = ({postData}) => {
-            //const { id } = router.query
+const PostPage = ({ postData }) => {
+    //const { id } = router.query
     const post: Post = JSON.parse(postData)
     useEffect(() => {
         console.log(post)
@@ -103,34 +103,34 @@ const PostPage = ({postData}) => {
                 description={post.subtitle}
                 openGraph={{
                     title: post.title,
-                      description: post.subtitle,
-                      images: [
+                    description: post.subtitle,
+                    images: [
                         {
-                          url: post.imagen,
-                          width: 900,
-                          height: 506,
-                          alt: 'Image',
+                            url: post.imagen,
+                            width: 900,
+                            height: 506,
+                            alt: 'Image',
                         },
-                      ],
-                      site_name: 'Blog',
-                    }}
-                />
-        <NormalPage footer={false} title={post?.title}>
-                <div className="bg-gray-900 w-full min-h-screen">
+                    ],
+                    site_name: 'Blog',
+                }}
+            />
+            <NormalPage footer={false} title={post?.title}>
+                <div className="bg-primary-900 w-full min-h-screen">
                     <div className="top-0 fixed image-container w-full">
-                        <div className="relative w-full h-full ">
-                            <div className="w-full h-full absolute bg-gray-900 bg-opacity-80" />
+                        <div className="relative w-full h-full">
+                            <div className="w-full h-full absolute bg-primary-900 bg-opacity-80" />
                             <div className="absolute w-full h-full">
                                 <h1 className="w-full h-full flex items-end p-4 md:pb-10 pb-4 md:text-5xl sm:text-3xl text-2xl font-bold text-gray-200 max-w-8xl mx-auto">{post?.title}</h1>
                             </div>
                             {/* <motion.img initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }} src={post?.imagen} className="h-full w-full object-cover z-0 transition-opacity" /> */}
-                                <div className="w-full h-full z-0 bg-cover bg-center" style={{backgroundImage: `url(${post?.imagen})`}}></div>
+                            <div className="w-full h-full z-0 bg-cover bg-center" style={{ backgroundImage: `url(${post?.imagen})` }}></div>
                         </div>
                     </div>
-                    <div className="bg-rd-600 w-full min-h-screen div-margin-top z-20 relative bg-gray-900 md:py-10 py-6"> {/*TODO*/ }
-                        <Div className="w-full h-full max-w-8xl mx-auto px-4" id="container" dangerouslySetInnerHTML={{__html: post.content}}>
+                    <div className="bg-rd-600 w-full min-h-screen div-margin-top z-20 relative bg-primary-900 md:py-10 py-6"> {/*TODO*/}
+                        <Div className="w-full h-full max-w-8xl mx-auto px-4" id="container" dangerouslySetInnerHTML={{ __html: post.content }}>
                             {/*AQUI IRIA TODO EL CODIGO EN FIREBASE*/}
 
                             {/*AQUI IRIA TODO EL CODIGO EN FIREBASE*/}

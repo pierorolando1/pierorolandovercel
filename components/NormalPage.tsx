@@ -1,27 +1,40 @@
 import Head from 'next/head'
 import 'tailwindcss/tailwind.css'
 import Navbar from './Navbar/Navbar'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import nProgress from "nprogress";
 import Footer from './Footer/Footer';
+import LoadingOverlay from 'react-loading-overlay'
+import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
+import { PacmanLoader } from 'react-spinners';
 
-export const NormalPage = ({ children, title, footer = true }) => {
+export const NormalPage = ({ children, title, footer = true, navbar = true }) => {
 
   const router = useRouter();
+  const [loading, setLoading] = useState(false)
+  const { modalOpen } = useSelector((state:any) => state.modal)
 
   useEffect(() => {
       const handleRouteChange = (url) => {
           console.log(url);
+          setLoading(true)
           NProgress.start();
       };
 
       router.events.on("routeChangeStart", handleRouteChange);
 
-      router.events.on("routeChangeComplete", () => NProgress.done());
+      router.events.on("routeChangeComplete", () => {
+        NProgress.done()
+        setLoading(false)
+      });
 
-      router.events.on("routeChangeError", () => nProgress.done());
+      router.events.on("routeChangeError", () => {
+        nProgress.done()
+        setLoading(false)
+      });
 
       return () => {
           router.events.off("routeChangeStart", handleRouteChange);
@@ -44,8 +57,20 @@ export const NormalPage = ({ children, title, footer = true }) => {
           />
 
       </Head>
+      
+      {/* <LoadingOverlay>  
+      </LoadingOverlay> */}
+      {/* loading ?
+        <motion.div initial={{translateX: '100%'}} animate={{translateX: '0%'}} exit={{translateX: '100%'}} className="h-screen w-full bg-gray-dark-2 fixed flex justify-center items-center" style={{zIndex: 1000000000}}>
+          <PacmanLoader color="rgb(29, 78, 216)" />
+        </motion.div>
+        : <></>
+      */}
 
+      {
+      navbar &&
       <Navbar />
+      }
 
       { 
         children
