@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { delay } from '../../helpers'
+import { delay, getAllPosts } from '../../helpers'
 import { NormalPage } from '../../components/NormalPage'
 import PostElement from '../../components/PostElement'
 import PostElementLoading from '../../components/PostElementLoading'
@@ -13,34 +13,13 @@ interface Author {
     photo: string,
 }
 
-const Blog = () => {
+export default function Blog({ postsd }){
+    const posts = JSON.parse(postsd)
+    console.log(posts)
 
-    const [posts, setPosts] = useState([])
     const [authors, setAuthors] = useState([])
     
     useEffect(() => {
-        db.collection("posts").orderBy("date", "desc").onSnapshot(async (querySnapshot) => {
-            const posts = [];
-            querySnapshot.docs.forEach((doc) => {
-                const { title, subtitle, date, category, authorID, authorName, authorPhoto, imagen } = doc.data();
-                posts.push({
-                    id: doc.id,
-                    title,
-                    subtitle,
-                    date,
-                    category,
-                    authorID,
-                    authorName,
-                    authorPhoto,
-                    imagen
-                });
-            });
-            await delay(500);
-
-            setPosts(posts);
-            console.log(posts)
-        });
-
         db.collection("authors").onSnapshot((querySnapshot) => {
             const authors = [];
             querySnapshot.docs.forEach((doc) => {
@@ -148,5 +127,13 @@ const Blog = () => {
     )
 }
 
+export async function getStaticProps() {
 
-export default Blog
+    const posts = await getAllPosts()
+
+    return {
+        props: {
+            postsd: JSON.stringify(posts)
+        },
+    }
+}

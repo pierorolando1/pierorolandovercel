@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName, authorID, authorPhoto, imagen}) => {
     const [hover, setHover] = useState(false)
+    console.log(typeof date)
     
     return (
         <div className="mt-3 transition-all">
@@ -23,7 +24,7 @@ const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName,
                 }
             >
                 <div className="flex justify-between items-center">
-                    <span className="font-light text-gray-400 sm:text-base text-sm">{date ? `${ moment(date.toDate()).format("DD | MM | YY")}` : '  '}</span>
+                    <span className="font-light text-gray-400 sm:text-base text-sm">{date ? `${ moment.unix(date.seconds).format("DD | MM | YY")}` : '  '}</span>
                     <a href="#" className="px-2 py-1 bg-primary-700 text-gray-100 font-bold rounded hover:bg-accent-hover transition-all sm:text-base text-sm">{ category }</a>
                 </div>
                 <div className="mt-2">

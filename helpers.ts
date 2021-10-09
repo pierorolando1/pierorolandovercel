@@ -8,7 +8,10 @@ export interface Post {
     date?: any,
     category?:any,
     imagen?:string,
-    content?:string
+    authorID?:string,
+    content?:string,
+    authorName?:string
+    authorPhoto?:string
 }
 
 export interface Author {
@@ -242,4 +245,30 @@ export const updatePhoneInAll = async ({username,newPhone}) => {
     } catch (error) {
         console.log(error)
     }
+}
+
+
+export const getAllPosts = async () => {
+
+    const snapshot = await db.collection('posts').get()
+    
+    var posts: Post[] = []
+    
+    snapshot.forEach((doc) => {
+
+        const { title, subtitle, date, category, authorID, authorName, authorPhoto, imagen } = doc.data()
+        posts.push({
+            id: doc.id,
+            title,
+            subtitle,
+            date,
+            category,
+            authorID,
+            authorName,
+            authorPhoto,
+            imagen
+        })
+    })
+
+    return posts
 }
