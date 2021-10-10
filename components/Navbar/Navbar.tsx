@@ -39,8 +39,8 @@ export default function Navbar() {
             </a>
           </div>
           <nav className="hidden md:flex space-x-10">
-            <Link href="/"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Inicio</a></Link>
-            <Link href="/#main"><a className="text-base font-medium text-gray-500 hover:text-gray-400">¿Quien soy?</a></Link>
+            <Link href="/"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Home</a></Link>
+            <Link href="/#main"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Who i am?</a></Link>
             {/* <div className="relative">
               <a onClick={() => { setProyectsnav(!proyectsnav) }} className={`${proyectsnav ? 'text-gray-500' : 'text-gray-300'} cursor-pointer rounded-md inline-flex items-center text-base font-medium hover:text-gray-400" aria-expanded="false`} >
                 <span>Proyectos</span>
@@ -50,7 +50,7 @@ export default function Navbar() {
               </a>
               <SubMenu active={proyectsnav} setProyectsnav={setProyectsnav} />
             </div> */}
-            <Link href="/proyectos"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Proyectos</a></Link>
+            <Link href="/proyectos"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Proyects</a></Link>
             <Link href="/blog"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a></Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -62,17 +62,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      {/* <!--
-    Mobile menu, show/hide based on mobile menu state.
-
-    Entering: "duration-200 ease-out"
-      From: "opacity-0 scale-95"
-      To: "opacity-100 scale-100"
-    Leaving: "duration-100 ease-in"
-      From: "opacity-100 scale-100"
-      To: "opacity-0 scale-95"
-  --> */}
       {
         mobileNav &&
         <SubMenuMobile active={true} setMobileNav={setMobileNav} />
