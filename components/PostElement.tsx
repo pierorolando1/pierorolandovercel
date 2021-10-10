@@ -42,14 +42,20 @@ const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName,
         //         </div>
         //     </motion.div>
         // </div>
-        <div className="my-6 transition-all">
+        <div className="hover:my-9 my-7 transition-all">
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-4xl w-full rounded p-3 sm:px-1 px-6">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} 
+                className="group shadow-md max-w-4xl w-full rounded p-3 py-3 hover:py-6 px-6 transition-all bg-primary-800 bg-opacity-0 active:bg-opacity-90">
+                <div className="w-full md:h-72 h-36 mb-3 rounded-md">
+                    <img src={imagen} className="rounded-t-md w-full h-full object-cover bg-cover transform scale-100 group-hover:scale-105 transition-all opacity-60 group-hover:opacity-90" alt="" />
+                </div>
                 <div className="w-full flex items-center justify-between py-1">
-                    <a href="/" className="flex items-center cursor-pointer hover:underline">
-                        <img className="w-7 h-7 object-cover rounded-full" src={authorPhoto} alt="" />
-                        <h1 className="text-sm pl-2 font-semibold text-primary-300 hover:underline">{authorName}</h1>
-                    </a>
+                    <Link href={`/blog/authors/${authorID}`}>
+                        <a className="flex items-center cursor-pointer hover:underline">
+                            <img className="w-7 h-7 object-cover rounded-full" src={authorPhoto} alt="" />
+                            <h1 className="text-xs pl-2 font-semibold text-primary-300 hover:underline">{authorName}</h1>
+                        </a>
+                    </Link>
                     <div className="flex">
                         {/* <svg xmlns="http://www.w3.org/2000/svg" className="text-primary-600 hover:text-accent h-5 w-5 transition-all cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
@@ -59,7 +65,9 @@ const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName,
                         </svg>
                     </div>
                 </div>
-                <h1 className="text-primary-100 sm:text-3xl text-2xl font-semibold py-2 hover:underline transition-all">{title}</h1>
+                <Link href={`/blog/${id}`}>
+                    <a className="text-primary-100 sm:text-3xl text-2xl font-semibold py-2 hover:underline transition-all">{title}</a>
+                </Link>
                 <h3 className="text-primary-300 sm:text-base text-sm">{subtitle}</h3>
                 <div className="flex items-center text-primary-200 font-semibold py-2 hover:text-accent transition-all cursor-pointer">
                     <h4 className="text-sm font-bold pr-1 pb-1">Read more</h4>

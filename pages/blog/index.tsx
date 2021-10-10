@@ -81,7 +81,7 @@ export default function Blog({ postsd }){
                             <div className="-mx-8 w-4/12 hidden lg:block  fixed right-10">
                                 <div className="px-8">
                                     <h1 className="mb-4 text-xl font-bold text-gray-300">Authors</h1>
-                                    <div className={"flex flex-col bg-primary-800 max-w-sm px-6 py-1 rounded-lg shadow-md " + (authors.length == 0 ? "animate-pulse" : "")}>
+                                    <div className={"flex flex-col bg-primary-800 bg-opacity-10 max-w-sm px-6 py-1 rounded-lg shadow-md " + (authors.length == 0 ? "animate-pulse" : "")}>
                                         <ul className="-mx-4">
                                                 {
                                                     authors.length > 0 ?
@@ -104,7 +104,7 @@ export default function Blog({ postsd }){
                                 <div className="mt-10 px-8">
                                     <h1 className="mb-4 text-xl font-bold text-gray-300">Categories</h1>
                                     <div className="flex flex-col bg-primary-800 px-4 py-6 max-w-sm rounded-lg shadow-md relative">
-                                        <div className="absolute w-full h-full z-10 bg-primary-900 rounded-lg top-0 right-0 opacity-50 cursor-not-allowed flex justify-center place-items-center">
+                                        <div className="absolute w-full h-full z-10 bg-primary-900  rounded-lg top-0 right-0 opacity-50 cursor-not-allowed flex justify-center place-items-center">
                                             <span className="text-white font-bold text-3xl z-50">En desarrollo 👷🚫</span>
                                         </div>
                                         <ul>
@@ -133,7 +133,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            postsd: JSON.stringify(posts)
+            postsd: JSON.stringify(posts.sort())
         },
     }
 }

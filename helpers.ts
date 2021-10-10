@@ -250,7 +250,7 @@ export const updatePhoneInAll = async ({username,newPhone}) => {
 
 export const getAllPosts = async () => {
 
-    const snapshot = await db.collection('posts').get()
+    const snapshot = await db.collection('posts').orderBy("date", "desc").get()
     
     var posts: Post[] = []
     
