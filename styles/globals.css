@@ -44,7 +44,7 @@ a {
   --tw-bg-opacity: 0.65;
   background-color: #151a21f5;/*rgba(24, 32.5, 47, var(--tw-bg-opacity));*/
   transition: all;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }
 
 .navbarpaddingactive{

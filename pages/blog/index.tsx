@@ -41,10 +41,10 @@ export default function Blog({ postsd }){
         <NormalPage title="Blog" footer={false}>
             <div className="w-full h-screen">
                 <div className="bg-primary-900 overflow-x-hidden">
-                    <div className="px-2 py-36">
+                    <div className="lg:px-4 xl:px-2 md:px-4 px-2 py-36">
                         <div className="flex justify-between container mx-auto">
                             <div className="w-full lg:w-8/12">
-                                <div className="flex items-center justify-between pb-4">
+                                <div className="flex items-center justify-between pb-2">
                                     <h1 className="text-xl font-bold text-gray-300 md:text-2xl sm:text-left text-center w-full">Posts</h1>
                                 </div>
 
@@ -69,12 +69,12 @@ export default function Blog({ postsd }){
 
 
                                 <div className="mt-8">
-                                    <div className="flex">
-                                        <a className="mx-1 px-3 py-2 bg-gray-800 text-gray-300 font-medium rounded-md cursor-not-allowed"> previous </a>
+                                    <div className="flex transition-all">
+                                        <a className="mx-1 px-3 py-2 bg-primary-800 text-gray-300 font-medium rounded cursor-not-allowed">previous</a>
 
-                                        <a href="#" className="mx-1 px-3 py-2 bg-gray-800 text-gray-300 font-medium hover:bg-blue-500 hover:text-white rounded-md"> 1 </a>
+                                        <a href="#" className="mx-1 px-3 py-2 bg-primary-800 text-gray-300 font-medium hover:bg-accent transition-all hover:text-white rounded">1</a>
 
-                                        <a href="#" className="mx-1 px-3 py-2 bg-gray-800 text-gray-300 font-medium hover:bg-blue-500 hover:text-white rounded-md"> Next </a>
+                                        <a href="#" className="mx-1 px-3 py-2 bg-primary-800 text-gray-300 font-medium hover:bg-accent transition-all hover:text-white rounded">Next</a>
                                     </div>
                                 </div>
                             </div>
