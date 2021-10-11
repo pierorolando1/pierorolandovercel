@@ -31,7 +31,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="cursor-pointer -mr-2 -my-2 md:hidden" onClick={() => { setMobileNav(!mobileNav) }} >
-            <a onClick={() => { setMobileNav(!mobileNav) }} className="cursor-pointer rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+            <a onClick={() => { setMobileNav(!mobileNav) }} className="cursor-pointer rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-300 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
               <span className="sr-only">Open menu</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -40,7 +40,7 @@ export default function Navbar() {
           </div>
           <nav className="hidden md:flex space-x-10">
             <Link href="/"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Home</a></Link>
-            <Link href="/#main"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Who i am?</a></Link>
+            <Link href="/#main"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Who I am?</a></Link>
             {/* <div className="relative">
               <a onClick={() => { setProyectsnav(!proyectsnav) }} className={`${proyectsnav ? 'text-gray-500' : 'text-gray-300'} cursor-pointer rounded-md inline-flex items-center text-base font-medium hover:text-gray-400" aria-expanded="false`} >
                 <span>Proyectos</span>
@@ -79,7 +79,11 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
   return (
     <motion.div initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }} transition={{ duration: 0.07 }} className={`${active ? '' : 'hidden'} absolute top-0 inset-x-0 transition transform origin-top-right md:hidden min-h-screen bg-primary-900 bg-opacity-60`} >
+      exit={{ opacity: 0 }} id="modal" transition={{ duration: 0.07 }} className={`${active ? '' : 'hidden'} absolute top-0 inset-x-0 transition transform origin-top-right md:hidden min-h-screen bg-primary-900 bg-opacity-60`}
+      onClick={e => {
+        if(e.target == document.getElementById("modal")) setMobileNav(false)
+      }}
+    >
       <div className="rounded-b-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-700 bg-primary-800">
         <div className="pt-5 pb-6 px-5">
           <div className="flex items-center justify-between">
@@ -107,7 +111,7 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
               <Link href="/"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
 
                 <img src="https://miro.medium.com/max/1000/1*ilC2Aqp5sZd1wi0CopD1Hw.png" className="w-6" />
-                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Who i am?</span>
+                <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Who I am?</span>
               </a></Link>
 
               <Link href="/proyectos"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
