@@ -64,11 +64,11 @@ export const Dashboard = () => {
         document.title = "Dashboard"
     }, [])
     return (
-        <section className="w-full min-h-screen h-full bg-gray-900 p-3 sm:p-10 pt-10 overflow-auto">
+        <section className="w-full min-h-screen h-full bg-primary-900 p-3 sm:p-10 pt-10 overflow-auto">
             <h1 className="text-2xl text-gray-300 pb-6 font-black">Posts</h1>
             <motion.div initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }} className="w-full bg-gray-800 rounded-lg p-3">
+                exit={{ opacity: 0 }} className="w-full bg-primary-800 rounded-lg p-3">
                 <h1 className="text-gray-300 font-black pb-3">Recientes</h1>
                 {
                     adminPosts.length > 0 ?

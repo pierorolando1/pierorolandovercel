@@ -44,7 +44,7 @@ export const AdminPost = ({ id, title, image, getPostsAndSetState }) => {
     return (
         <motion.div initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }} className="py-2 border-b border-t border-gray-700 flex items-center">
+        exit={{ opacity: 0 }} className="py-2 border-b border-t border-primary-700 flex items-center">
             <img alt="" src={ image } className="sm:h-14 sm:w-14 h-11 w-11 object-cover rounded-2xl" />
             <div className="flex w-full items-center">
                 <div className="flex w-full justify-around">

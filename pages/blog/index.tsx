@@ -15,7 +15,7 @@ interface Author {
 
 export default function Blog({ postsd }){
     const posts = JSON.parse(postsd)
-    console.log(posts)
+    //console.log(posts)
 
     const [authors, setAuthors] = useState([])
     

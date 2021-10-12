@@ -217,10 +217,10 @@ button:focus {
 
 
 code {
-  padding: 0.9rem;
+  padding: 0.9rem !important;
   border-radius: 5px;
   color: rgb(191, 199, 213);
-  background-color: rgb(41, 45, 62);
+  background-color: rgb(40, 44, 52) /*rgb(41, 45, 62)*/ !important;
 }
 
 .bg-gray-dark-1 {

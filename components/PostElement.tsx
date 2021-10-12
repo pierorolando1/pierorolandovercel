@@ -3,6 +3,7 @@ import Link from 'next/link'
 import moment from 'moment';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { ShareSelector } from './ui/Share';
 
 
 const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName, authorID, authorPhoto, imagen }) => {
@@ -56,14 +57,12 @@ const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName,
                             <h1 className="text-xs pl-2 font-semibold text-primary-300 hover:underline">{authorName}</h1>
                         </a>
                     </Link>
-                    <div className="flex">
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="text-primary-600 hover:text-accent h-5 w-5 transition-all cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                        </svg> */}
-                        <svg xmlns="http://www.w3.org/2000/svg" className="text-primary-600 hover:text-accent h-5 w-5 transition-all cursor-pointer ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                        </svg>
+                    <div className="relative">
+                        <ShareSelector postId={id}/>
                     </div>
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="text-primary-600 hover:text-accent h-5 w-5 transition-all cursor-pointer ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                        </svg> */}
                 </div>
                 <Link href={`/blog/${id}`}>
                     <a className="text-primary-100 sm:text-3xl text-2xl font-semibold py-2 hover:underline transition-all">{title}</a>
