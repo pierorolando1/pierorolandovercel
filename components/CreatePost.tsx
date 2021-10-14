@@ -70,9 +70,9 @@ export const CreatePost = ({authState}) => {
     
     return (
         <form className="flex flex-col" onSubmit={e => e.preventDefault()}>
-            <input required value={title} onChange={e => setTitle(e.target.value)} className="w-full text-3xl font-black bg-transparent focus:outline-none focus:border-transparent text-gray-50" type="text" placeholder="Titulo" />
-            <input required value={subtitle} onChange={e => setSubtitle(e.target.value)} className="w-full text-xl bg-transparent font-bold text-gray-100" type="text" placeholder="Descripción" />
-            <textarea value={content} onChange={e => setcontent(e.target.value)} className="w-full bg-transparent" placeholder="Contenido (opcional)"></textarea>
+            <input required value={title} onChange={e => setTitle(e.target.value)} className="w-full text-3xl font-bold bg-transparent focus:outline-none focus:border-transparent text-primary-200 placeholder-opacity-70" type="text" placeholder="Titulo" />
+            <input required value={subtitle} onChange={e => setSubtitle(e.target.value)} className="py-2 w-full text-xl bg-transparent font-semibold text-primary-200 placeholder-opacity-60 focus:outline-none focus:border-transparent" type="text" placeholder="Descripción" />
+            <textarea value={content} onChange={e => setcontent(e.target.value)} className="w-full bg-transparent text-base placeholder-primary-200 placeholder-opacity-50 focus:outline-none focus:border-transparent text-primary-100" placeholder="Contenido (opcional)"></textarea>
             <div className="flex text-sm">
                 <h1>/blog/</h1>
                 <input type="text" className="p-0 bg-transparent" value={url} onChange={e => setUrl(e.target.value)} />

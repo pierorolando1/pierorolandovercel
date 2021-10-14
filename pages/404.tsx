@@ -5,10 +5,10 @@ import { NormalPage } from '../components/NormalPage'
 const Page404 = () => {
     return (
     <NormalPage footer={false} title="404 not found" navbar={false}>
-        <div className="p-5 bg-gray-900 min-h-screen flex-col flex justify-evenly">
+        <div className="p-5 bg-primary-900 min-h-screen flex-col flex justify-evenly">
 
             <Link href="/">
-                <a className="mx-auto max-w-sm w-full bg-gray-800 flex text-gray-400 items-center p-4 rounded hover:text-blue-600 hover:font-semibold transition-all bg-opacity-0 hover:bg-opacity-20 hover:shadow-sm">
+                <a className="mx-auto max-w-sm w-full bg-primary-800 flex text-gray-400 items-center p-4 rounded hover:text-blue-600 hover:font-semibold transition-all bg-opacity-0 hover:bg-opacity-20 hover:shadow-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
@@ -21,7 +21,7 @@ const Page404 = () => {
             <h1 className="max-w-sm w-full mx-auto text-gray-300 font-semibold text-4xl text-center">Are u lost?</h1>
             </div>
             <Link href="/blog">
-                <a className="mx-auto max-w-sm w-full bg-gray-800 flex text-gray-400 items-center p-4 rounded hover:text-blue-600 hover:font-semibold transition-all bg-opacity-0 hover:bg-opacity-20 hover:shadow-sm">
+                <a className="mx-auto max-w-sm w-full bg-primary-800 flex text-gray-400 items-center p-4 rounded hover:text-blue-600 hover:font-semibold transition-all bg-opacity-0 hover:bg-opacity-20 hover:shadow-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>

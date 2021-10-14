@@ -103,17 +103,17 @@ export const EditProfile = ({setModalopen}) => {
                 }
                 
                 <label className="text-gray-400 font-semibold text-xs">Nombre</label>
-                <input type="text" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1" placeholder="Nombre" 
+                <input type="text" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Nombre" 
                     defaultValue={ displayName }
                     onChange={e => setDisplayName(e.target.value)} 
                 />
                 <label className="text-gray-400 font-semibold text-xs">Email</label>
-                <input type="email" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1" placeholder="Email" 
+                <input type="email" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Email" 
                     defaultValue={ email } 
                     onChange={e => setEmail(e.target.value)}
                 />
                 <label className="text-gray-400 font-semibold text-xs">Phone</label>
-                <input type="number" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1" placeholder="Phone" 
+                <input type="number" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Phone" 
                     defaultValue={phone} 
                     onChange={e => setPhone(e.target.value)}
                 />

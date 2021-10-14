@@ -43,7 +43,7 @@ const PostElement = ({ id, date, title, subtitle, category = "Todo", authorName,
         //         </div>
         //     </motion.div>
         // </div>
-        <div className="hover:my-9 my-7 transition-all">
+        <div className="my-8 transition-all">
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} 
                 className="group shadow-md max-w-4xl w-full rounded p-3 py-3 hover:py-6 px-6 transition-all bg-primary-800 bg-opacity-0 active:bg-opacity-90">
