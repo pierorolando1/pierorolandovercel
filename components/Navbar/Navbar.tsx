@@ -50,7 +50,7 @@ export default function Navbar() {
               </a>
               <SubMenu active={proyectsnav} setProyectsnav={setProyectsnav} />
             </div> */}
-            <Link href="/proyectos"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Proyects</a></Link>
+            <Link href="/proyects"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Proyects</a></Link>
             <Link href="/blog"><a className="text-base font-medium text-gray-500 hover:text-gray-400">Blog</a></Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -114,7 +114,7 @@ export const SubMenuMobile = ({ active, setMobileNav }) => {
                 <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Who I am?</span>
               </a></Link>
 
-              <Link href="/proyectos"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
+              <Link href="/proyects"><a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-700">
                 <img src="https://jmsolera.com/wp-content/uploads/2019/07/React.js_logo-512.png" className="w-6" alt="" />
                 <span className="ml-3 text-base font-medium text-gray-400 hover:text-gray-300">Proyects</span>
               </a></Link>

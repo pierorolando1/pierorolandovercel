@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { NormalPage } from '../components/NormalPage';
 
 const Contact = () => {
@@ -60,7 +60,7 @@ export const ContactForm = () => {
                 </div>
 
                 {/* <!-- Contact Me --> */}
-                <form action="https://formsubmit.co/rolandopiero63@gmail.com" className="w-full md:w-1/2 p-7 pt-9 rounded-  lg shadow-lg" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}}>
+                <form action="https://formsubmit.co/rolandopiero63@gmail.com" method="POST" onSubmit={e => e.preventDefault()} className="w-full md:w-1/2 p-7 pt-9 rounded-  lg shadow-lg" style={{ backgroundColor:  'rgba(31, 41, 55, 0.45)'}}>
                     <h2 className="text-2xl pb-3 font-semibold">Send Message</h2>
                     <div>
                         <div className="flex flex-col mb-3">

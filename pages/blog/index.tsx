@@ -81,7 +81,7 @@ export default function Blog({ postsd }){
                             <div className="-mx-8 w-4/12 hidden lg:block  fixed right-10">
                                 <div className="px-8">
                                     <h1 className="mb-4 text-xl font-bold text-gray-300">Authors</h1>
-                                    <div className={"flex flex-col bg-primary-800 bg-opacity-10 max-w-sm px-6 py-1 rounded-lg shadow-md " + (authors.length == 0 ? "animate-pulse" : "")}>
+                                    <div className={"transition-all bg-opacity-0 flex flex-col bg-primary-800 active:bg-opacity-90 max-w-sm px-0 active:px-6 py-1 rounded-md" + (authors.length == 0 ? "animate-pulse" : "")}>
                                         <ul className="-mx-4">
                                                 {
                                                     authors.length > 0 ?
