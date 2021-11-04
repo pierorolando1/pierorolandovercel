@@ -51,9 +51,20 @@ export default function Blog({ postsd }){
                                 {/* <!-- init the post --> */}
                                 {
                                     (posts.length > 0) ?
-                                        posts.map(post => (
+                                        posts.map((post, index) => (
                                             post ? 
-                                            <PostElement imagen={post.imagen} authorPhoto={post.authorPhoto} authorID={post.authorID} authorName={post.authorName} id={post.id} date={post.date} title={post.title} subtitle={post.subtitle} category={post.category} />
+                                            <PostElement
+                                                key={index}
+                                                imagen={post.imagen}
+                                                authorPhoto={post.authorPhoto} 
+                                                authorID={post.authorID} 
+                                                authorName={post.authorName} 
+                                                id={post.id} 
+                                                date={post.date} 
+                                                title={post.title} 
+                                                subtitle={post.subtitle} 
+                                                category={post.category} 
+                                            />
                                             : <h1>cargando....</h1>
                                         )
                                         ) : (
@@ -85,8 +96,8 @@ export default function Blog({ postsd }){
                                         <ul className="-mx-4">
                                                 {
                                                     authors.length > 0 ?
-                                                    authors.map((author: Author) => {
-                                                        return  <li className="flex my-5 items-center animate__animated animate__fadeIn animate__fast">
+                                                    authors.map((author: Author, index: number) => {
+                                                        return  <li key={index} className="flex my-5 items-center animate__animated animate__fadeIn animate__fast">
                                                                     <img placeholder={"<h1>hola</h1>"} src={author.photo} alt=" " className="bg-gray-700 w-10 h-10 object-cover rounded-full mx-4" />
                                                                     <p><Link href={`blog/authors/${author.id}`}><a className="text-gray-400 font-bold mx-1 hover:underline">{author.name}</a></Link></p>
                                                                 </li>
