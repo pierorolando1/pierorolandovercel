@@ -6,7 +6,7 @@ import nProgress from "nprogress";
 import { useEffect } from 'react';
 import BarLoader from 'react-spinners/BarLoader'
 
-export const ProtectedComponent : React.FunctionComponent<{userState: authState, redirecTo: string}>= (props) => {
+export const NoProtectedComponent : React.FunctionComponent<{userState: authState, redirecTo: string}>= (props) => {
 
     const router = useRouter();
 
@@ -30,12 +30,12 @@ export const ProtectedComponent : React.FunctionComponent<{userState: authState,
 
     return (
         props.userState == authState.loading ?
-            <div className="bg-primary-900 h-screen">
+            <div className="bg-primary-900 h-screen flex items-center justify-center">
                 <BarLoader color="#fd4d4d" />
             </div>
-        : (props.userState == authState.notLoged ?
+        : (props.userState == authState.loged ?
             <Redirect to={props.redirecTo} />
-            : props.userState == authState.loged &&
+            : props.userState == authState.notLoged &&
             <>{
                 props.children
             }</>)

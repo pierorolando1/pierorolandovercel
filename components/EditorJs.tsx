@@ -44,8 +44,8 @@ export default function EditorJs({ post }) {
     return (
         <>
             {/*<div id='toolbar'/>*/}
-            <div className='bg-gray-800 text-white max-w-7xl mx-auto'>
-                <div id='editor' className='bg-gray-800' />
+            <div className='bg-primary-800 text-white max-w-7xl mx-auto'>
+                <div id='editor' className='bg-primary-800' />
             </div>
             <div className='max-w-7xl mx-auto flex w-full py-3'>
                 {/* <button onClick={() => console.log(JSON.stringify( editor.root.innerHTML ))} className='bg-blue-700 rounded text-gray-50 font-extrabold p-2 px-3'>Guardar</button> */}

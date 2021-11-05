@@ -52,10 +52,10 @@ const PostEdit = () => {
             <GeneralPage>
                 {
                     (post != null) ? (
-                        <div className="h-full min-h-screen bg-gray-900 transition-all">
+                        <div className="h-full min-h-screen bg-primary-900 transition-all">
                             <AdminNavBar />
                             <div className="image-container relative">
-                                <div className="w-full h-full absolute bg-gray-900 bg-opacity-80 flex flex-col sm:p-14 p-7">
+                                <div className="w-full h-full absolute bg-primary-900 bg-opacity-80 flex flex-col sm:p-14 p-7">
                                     <div className="max-w-7xl mx-auto w-full h-full">
                                     </div>
                                     <div className="max-w-7xl mx-auto w-full">
@@ -86,7 +86,7 @@ const PostEdit = () => {
                             </div>
                             <EditorJs post={post} />
                             <div className="w-full h-8"></div>
-                            <button onClick={() => router.push(`/admin/post/${window.location.pathname.split("/admin/post/")[1]}/prev`)} className="transition-all fixed bottom-5 right-5 sm:bottom-10 sm:right-10 bg-indigo-700 text-white font-black p-3 px-5 rounded-full hover:bg-blue-600 shadow-xl sm:text-base text-sm hover:shadow-2xl">Previsualizar</button>
+                            {/* <button onClick={() => router.push(`/admin/post/${window.location.pathname.split("/admin/post/")[1]}/prev`)} className="transition-all fixed bottom-5 right-5 sm:bottom-10 sm:right-10 bg-indigo-700 text-white font-black p-3 px-5 rounded-full hover:bg-blue-600 shadow-xl sm:text-base text-sm hover:shadow-2xl">Previsualizar</button> */}
                         </div>
                     )
                         : <Redirect to="/admin/" />

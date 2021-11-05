@@ -3,7 +3,7 @@ export interface ProyectInterface {
     description:string,
     image:string,
     /**Tecnologies with the app is build */
-    tecnologies:('React'|'Flutter'|'Next.js'|'Node.js'|'Nest.js'|'Typescript'|'Firebase'|'MongoDb'|'Sql(postgresql)')[],
+    tecnologies:('React'|'Flutter'|'Next.js'|'Node.js'|'Nest.js'|'Typescript'|'Firebase'|'MongoDb'|'Sql(postgresql)'|'Rust'|'WebAssembly'|'Machine learning')[],
     repository:string
 }
 

@@ -15,7 +15,6 @@ interface Author {
 
 export default function Blog({ postsd }){
     const posts = JSON.parse(postsd)
-    //console.log(posts)
 
     const [authors, setAuthors] = useState([])
     
@@ -32,7 +31,6 @@ export default function Blog({ postsd }){
                 });
             });
             setAuthors(authors);
-            console.log(authors)
         });
         
     }, []);

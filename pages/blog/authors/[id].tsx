@@ -79,7 +79,7 @@ const AuthorPage = ({ authorData }) => {
                     }
                 </div>
                 <div className="w-4/12 hidden lg:block fixed right-0 top-40 h-screen">
-                    <div className="flex flex-col items-center bg-gray-800 max-w-sm px-6 py-6 mx-auto rounded-lg shadow-md">
+                    <div className="flex flex-col items-center bg-primary-800 max-w-sm px-6 py-6 mx-auto rounded-lg shadow-md">
                         <img src={ author.photo } className="mb-2 w-20 h-20 object-cover rounded-full shadow" alt="" />
                         <h1 className="text-gray-300 font-black text-lg">{ author.name }</h1>
                         <h1 className="text-gray-500 font-medium text-sm">{author.email}</h1>

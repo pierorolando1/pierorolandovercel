@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import ClockLoader from 'react-spinners/ClockLoader'
 import Swal from 'sweetalert2'
 import { firebase } from '../../../../firebase.config'
 import { fileUpload, updateEmailInAll, updateNameInAll, updatePhoneInAll, updatePhotoInAll } from '../../../../helpers'
+import { startLogout } from '../../../../redux/auth/actions'
 
 export const EditProfile = ({setModalopen}) => {
+
+    const dispatch = useDispatch()
 
     const [passwordChanged, setPasswordChanged] = useState(false)
     const [loadingImage, setLoadingImage] = useState(false)
@@ -73,9 +76,13 @@ export const EditProfile = ({setModalopen}) => {
         setModalopen(false)
     }
 
+    const _logout = () => {
+        dispatch(startLogout())
+    }
+
     return (
         <div className="w-full h-full overflow-hidden">
-            <div className="bg-gray-900 w-full border border-gray-800 rounded-t-md top-0 left-0 flex items-center justify-between p-2">
+            <div className="bg-primary-900 w-full border border-primary-800 rounded-t-md top-0 left-0 flex items-center justify-between p-2">
                 <h1 className="text-gray-50 text-sm font-bold">Edit profile</h1>
                 {
                     !updating ?
@@ -83,7 +90,7 @@ export const EditProfile = ({setModalopen}) => {
                     : <ClockLoader size="28" color="#1d4ed8" />
                 }
             </div>
-            <div className="w-full max-h-full overflow-auto bg-gray-900 bg-opacity-80 p-2 px-4 h-full border-r border-l border-gray-800">
+            <div className="w-full max-h-full overflow-auto bg-primary-900 bg-opacity-80 p-2 px-4 h-full border-r border-l border-primary-800">
                 {
                 !loadingImage ?
                 <>
@@ -103,17 +110,17 @@ export const EditProfile = ({setModalopen}) => {
                 }
                 
                 <label className="text-gray-400 font-semibold text-xs">Nombre</label>
-                <input type="text" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Nombre" 
+                <input type="text" className="w-full bg-primary-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Nombre" 
                     defaultValue={ displayName }
                     onChange={e => setDisplayName(e.target.value)} 
                 />
                 <label className="text-gray-400 font-semibold text-xs">Email</label>
-                <input type="email" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Email" 
+                <input type="email" className="w-full bg-primary-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Email" 
                     defaultValue={ email } 
                     onChange={e => setEmail(e.target.value)}
                 />
                 <label className="text-gray-400 font-semibold text-xs">Phone</label>
-                <input type="number" className="w-full bg-gray-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Phone" 
+                <input type="number" className="w-full bg-primary-800 text-gray-50 rounded-md px-4 font-medium text-sm shadow-md py-1.5" placeholder="Phone" 
                     defaultValue={phone} 
                     onChange={e => setPhone(e.target.value)}
                 />
@@ -127,8 +134,9 @@ export const EditProfile = ({setModalopen}) => {
                             console.log("adas")
                             setPasswordChanged(true)
                         }}
-                        className="bg-gray-200 py-1 text-sm px-3 rounded-full font-bold my-3">Cambiar contraseña</button>
+                        className="bg-gray-200 py-1 text-sm px-3 rounded-full font-bold my-3 transition-all">Cambiar contraseña</button>
                 }
+                <button onClick={_logout} className="bg-red-500 block py-1 px-3 text-sm rounded-full font-medium text-white transition-all">Log out</button>
             </div>
         </div>
     )
