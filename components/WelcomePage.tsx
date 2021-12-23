@@ -44,7 +44,7 @@ export const Main = () => {
             <div className="max-w-7xl h-full text-gray-400 px-6 md:px-10" style={{ flex: 1 }} >
                 <h1 className=" mt-32 uppercase font-normal text-center">Full stack & mobile developer</h1>
                 <h1 className="text-3xl text-center text-gray-300">I'M PIERO ROLANDO,<br /></h1>
-                <div className="flex items-center justify-center"><p className="">Dejenme presentarme, soy un desarrollador full stack, como Freelancer he realizado aplicaciones web y mobiles.</p></div>
+                <div className="flex items-center justify-center"><p className="">Let me introduce my self.</p></div>
             </div>
         </main>
     )
